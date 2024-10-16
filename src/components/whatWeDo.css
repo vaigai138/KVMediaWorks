@@ -139,7 +139,7 @@ h2{
   }
 
   /* For small screens like mobile devices */
-@media (max-width: 300px) {
+@media (max-width: 500px) {
     .cards {
         width: 100%; /* Increased width for smaller screens to fit content */
     }

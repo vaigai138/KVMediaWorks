@@ -146,7 +146,7 @@
   }
   
 
-  @media (max-width: 300px){
+  @media (max-width: 500px){
     .faq-container {
       flex-direction: column; /* Stack columns vertically on smaller screens */
       padding: 1rem;

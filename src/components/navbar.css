@@ -141,7 +141,7 @@
 }
 
 /* Media query for smaller mobile devices */
-@media (max-width: 300px) {
+@media (max-width: 500px) {
   .logo {
     margin-left: 10px;
   }

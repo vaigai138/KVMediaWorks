@@ -40,7 +40,7 @@ span{
 
 
 
-@media (max-width: 300px){
+@media (max-width: 500px){
     .gradient-text{
         font-size: 25px;
     }

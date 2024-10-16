@@ -25,7 +25,7 @@ body {
 }
 
 /* Additional specific styles for smaller screens */
-@media (max-width: 300px) {
+@media (max-width: 500px) {
   .app-wrapper {
     font-size: 14px; 
     align-items: center;
