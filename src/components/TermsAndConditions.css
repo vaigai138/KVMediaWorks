@@ -1,0 +1,21 @@
+.terms-container {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff; /* Assuming your theme uses white text */
+    line-height: 1.6;
+  }
+  
+  h1, h2 {
+    color: #f1f1f1;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    margin-top: 30px;
+  }
+  

@@ -1,0 +1,156 @@
+.whatWeDo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 50px 0; */
+    position: relative; /* Make this position relative for feather effect */
+}
+
+.whatwedo-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    background: linear-gradient(90deg, #00c6ff, #0072ff); /* Light blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center navigation */
+    position: relative; /* Position relative for feather effect */
+}
+
+.cards {
+    display: flex;
+    overflow: hidden; /* Hide both horizontal and vertical scrollbars */
+    scroll-behavior: smooth; /* Smooth scroll when navigating */
+    width: 80%; /* Adjust width for card container */
+    margin: 0 20px; /* Space between buttons and card container */
+    position: relative; /* Position relative for feather effect */
+}
+
+.card {
+    /* Set max width for uniformity */
+         /* Adjust height for visibility */
+    margin: 10px; /* Space between cards */
+    width: 500px;
+    height: 200px;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    position: relative;
+    margin-bottom: 50px; /* Maintain positioning for scaling */
+}
+
+.card-body {
+    padding: 20px;
+    height: 100%; /* Full height to fill card */
+    display: flex; /* Flex to align content */
+    flex-direction: column; /* Column alignment */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth background transition */
+}
+
+.card-body.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    
+    color: #fff;
+}
+
+/* Smooth scale effect on hover */
+.card-body:hover {
+    transform: scale(1.05); /* Scale up slightly */
+    z-index: 1; /* Bring the hovered card to the front */
+}
+
+/* Navigation button styles */
+.nav-button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem; /* Size of navigation button */
+    cursor: pointer;
+    color: #ff98a2; /* Color of navigation button */
+}
+
+.nav-button:hover {
+    color: #fff; /* Change color on hover */
+}
+
+/* Feather effect on left and right sides */
+.feather-left,
+.feather-right {
+    position: absolute;
+    width: 50px; /* Width of the feather effect */
+    height: 100%;
+    z-index: 1; /* Keep it on top */
+}
+
+.feather-left {
+    left: 0; /* Position left */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent); /* Left feather */
+}
+
+.feather-right {
+    right: 0; /* Position right */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent); /* Right feather */
+}
+
+
+h2{
+    color: #ff98a2;
+}
+
+.service-para{
+   
+    color: #A3C9F1;
+    font-family:cursive;
+    font-size: large;
+
+}
+
+.contact-btn-2 {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px 0;
+  }
+  
+  .contact-btn-2:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 118, 255, 0.6);
+  }
+
+  /* For small screens like mobile devices */
+@media (max-width: 500px) {
+    .cards {
+        width: 100%; /* Increased width for smaller screens to fit content */
+    }
+    .card {
+        width: 100%; /* Make cards full-width on small screens */
+    }
+    .service-para{
+        font-size: 13px;
+    }
+    h2{
+        font-size: larger;
+    }
+}
+

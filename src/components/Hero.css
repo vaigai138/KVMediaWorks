@@ -1,0 +1,51 @@
+.hero-container{
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center ;
+}
+
+.free button{
+    background-color: #4d4855;
+background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+color: #00d0ff;
+padding: 10px;
+border: none;
+width: 200px;
+border-radius: 10px;
+
+}
+
+.gradient-text{
+    color: white;
+    font-size: 50px;
+}
+
+span{
+    background: linear-gradient(90deg, #00c6ff, #0072ff); /* Blue gradient */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the fill color transparent so the gradient shows */
+  background-clip: text;
+  margin: 0;
+}
+.hero-paragraph{
+    color: grey;
+    margin: 0;
+}
+
+.hero-logo{
+    width: 300px;
+    
+}
+
+
+
+@media (max-width: 480px){
+    .gradient-text{
+        font-size: 25px;
+    }
+    span{
+        font-size: 40px;
+    }
+   
+}

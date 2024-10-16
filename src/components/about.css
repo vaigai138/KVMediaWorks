@@ -1,0 +1,110 @@
+.about-container {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.showreel-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.showreel-thumbnail {
+    width: 100%;
+    max-width: 800px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 20px;
+}
+
+.showreel-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(163, 247, 255, 0.1) 0px 1px 1px 0px inset, rgba(73, 192, 168, 0.25) 0px 50px 100px -20px, rgba(0, 234, 255, 0.3) 0px 30px 60px -30px;
+}
+
+.about-us-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    color: white;
+    margin-top: 30px;
+}
+
+.about-left {
+    flex: 1;
+    text-align: left;
+    margin-left: 15%;
+}
+
+.about-para {
+    margin-right: 30px;
+    color: #A3C9F1;
+    font-family: cursive;
+    font-size: large;
+}
+
+.about-right {
+    flex: 0.5;
+    text-align: right;
+}
+
+.man-img {
+    width: 300px;
+    max-width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(173, 216, 230, 0.3)); /* Light grey to mild blue gradient */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(225, 225, 225, 0.1); /* Soft shadow for depth */
+    border: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.about-head {
+    text-align: left;
+    margin-right: 50%;
+    margin-bottom: 0;
+    background: linear-gradient(90deg, #00c6ff, #0072ff); /* Blue gradient */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent; /* Makes the fill color transparent so the gradient shows */
+    background-clip: text;
+}
+
+hr {
+    width: 100%;
+    border: #7cd5ed 1px solid;
+    margin: 10px;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    .about-us-desktop {
+        display: none; /* Hide desktop layout on mobile */
+    }
+
+    .about-us-mobile {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align */
+        width: 100%; /* Full width for mobile */
+    }
+
+    .about-para-mobile {
+        margin: 20px; /* Add some padding for readability */
+        font-size: medium; /* Adjust font size for mobile */
+        line-height: 1.2; /* Slightly increase line height */
+        color: #A3C9F1; /* Match the color from the desktop view */
+        text-align: center; /* Center align text */
+         /* Limit height to show 3-5 lines */
+        overflow: hidden; /* Hide overflow */
+        font-family: cursive;
+    }
+}
+@media (min-width: 1024px) {
+    .about-us-mobile{
+        display: none;
+    }
+}

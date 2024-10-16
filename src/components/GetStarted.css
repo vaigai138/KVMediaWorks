@@ -1,0 +1,179 @@
+.registration-form {
+    display: flex;
+    justify-content: center; /* Center the form */
+    align-items: center; /* Vertically center */
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 70%;
+    margin: 20px auto; /* Center the form on the page */
+    padding: 20px; /* Add some padding to the container */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap for better spacing */
+    max-width: 450px; 
+    padding: 20px;
+    color: #fff;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #00bfff;
+}
+
+.get-started-btn{
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 400;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-align{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.get-started-btn:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 118, 255, 0.6);
+}
+
+.large-text{
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.message {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* New Styles for the Header */
+.header {
+    font-size: 32px; /* Increased font size */
+    font-weight: bold;
+    color: #00bfff; /* Header color */
+    cursor: pointer; /* Make it clickable */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 50px; 
+}
+
+.form label {
+    position: relative;
+    display: flex; /* Flex to align items */
+    flex-direction: column; /* Vertical alignment */
+}
+
+select{
+    width: 100%;
+}
+
+.input {
+    background-color: #444; /* Keep the dark background */
+    color: #fff; /* Text color */
+    width: 100%;
+    padding: 15px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.4); /* Softer border */
+    border-radius: 10px;
+    transition: border-color 0.3s ease; /* Smooth transition for border */
+}
+
+.services-input{
+    width: 105%;
+}
+
+.input:focus {
+    border-color: #00bfff; /* Highlight border on focus */
+    background-color: #444; /* Maintain dark background */
+}
+
+.form label span {
+    color: rgba(255, 255, 255, 0.7); /* Lighter color for placeholder */
+    position: absolute;
+    left: 10px;
+    top: 15px; /* Placeholders positioned initially */
+    font-size: 1em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.input:focus + span,
+.input:not(:placeholder-shown) + span { /* Move placeholder when input is filled or focused */
+    color: #00bfff;
+    top: -0px; /* Move up above the input */
+    font-size: 0.75em; /* Shrink font size */
+    font-weight: 600;
+}
+
+/* Add this class for the textareas to restrict the height */
+.textarea {
+    resize: none; /* Disable resizing of the textarea */
+    height: 100px; /* Set a fixed height for the textarea */
+    background-color: #444; /* Maintain dark background for textarea */
+}
+
+/* Keep the same focus styling for textarea as input */
+.textarea:focus {
+    border-color: #00bfff; /* Highlight border on focus */
+    background-color: #444; /* Maintain dark background */
+}
+
+.submit {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #00bfff;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #00bfff96;
+}
+
+@media (max-width: 500px){
+    .registration-form{
+        align-items: center;
+        width: 85%;
+        
+    }
+    .services-input{
+        width: 108%;
+    }
+    .submit{
+        width: 150px;
+        
+    }
+    .flex{
+        gap: 30px;
+    }
+    .get-start-hr{
+        width: 80%;
+        margin-left: 30px;
+    }
+    hr{
+        width: 80%;
+        margin-left: 30px;
+    }
+}

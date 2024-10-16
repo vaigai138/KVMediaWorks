@@ -1,0 +1,157 @@
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 40px;
+    color: white;
+    background: transparent; /* Matches the theme background */
+    width: 90%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+  }
+  
+  .footer-left {
+    flex: 1; /* Takes up 1 portion of space */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-logo {
+    width: 100px; /* Adjust logo size */
+    margin-bottom: 10px; /* Space between logo and social icons */
+  }
+  
+  .social-icons-left {
+    display: flex;
+    gap: 20px; /* Space between social media icons */
+    align-items: flex-start;
+    margin-left: 5px;
+  }
+  
+  .icon {
+    color: grey;
+    font-size: 24px; /* Adjust icon size */
+  }
+  
+  .icon:hover{
+    color: #ffffff;
+  }
+  
+  .footer-right {
+    flex:2; /* Takes up 2 portions of space to create balance */
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .quote {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00f0ff, #00d0ff, #00a0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 180, 255, 0.32);
+  }
+  
+  .join-us-btn {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 400;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+  }
+  
+  .join-us-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 118, 255, 0.6);
+  }
+  
+  .terms-link {
+    font-size: 12px;
+    color: #bebebe;
+    text-decoration: none;
+  }
+  
+  .terms-link:hover {
+    text-decoration: underline;
+  }
+  
+
+  .author-name{
+    align-items: right;
+    margin-top: 185px;
+
+    font-size:12px ;
+ 
+  }
+  .a-name{
+    display: none;
+  }
+
+  
+
+  @media (max-width: 500px){
+    .footer-container{
+      width: 90%;
+      height: 150px;
+      padding: 15px 15px;
+      margin: 0;
+    }
+
+    .author-name{
+      display: none;
+    }
+    .quote{
+      font-size: 12px;
+    }
+    .footer-logo{
+      width: 60px;
+    }
+    .icon{
+      font-size: 15px;
+    }
+    .social-icons-left {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-right p{
+      font-size: 12px;
+      margin: 5px 0;
+    }
+
+    .join-us-btn{
+      width: 60px;
+      font-size: 12px;
+    }
+    .terms-link {
+      text-decoration: underline;
+    }
+
+    .a-name{
+      text-align: center;
+      display: block;
+    } 
+    .author-name-mobile{
+      font-size: 12px;
+    }
+    .author-name-mobile span{
+      font-size: 12px;
+    }
+
+    
+  }

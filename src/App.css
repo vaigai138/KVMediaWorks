@@ -1,0 +1,38 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.2), transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(173, 216, 230, 0.15), transparent 50%),
+              linear-gradient(180deg, #040813, #000);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .app-wrapper {
+    padding: 10px; /* Add some padding for smaller screens */
+  }
+
+  /* Adjust any other component styles for mobile view */
+}
+
+/* Additional specific styles for smaller screens */
+@media (max-width: 480px) {
+  .app-wrapper {
+    font-size: 14px; 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/* Decrease font size for smaller devices */
+  }
+
+  /* You can also target specific components here */
+}

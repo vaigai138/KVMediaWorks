@@ -1,0 +1,160 @@
+/* General styles for Navbar */
+.navbar-container {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  margin-right: 50px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: grey;
+  transform: scale(1.1);
+}
+
+.logo {
+  margin-left: 50px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background: linear-gradient(90deg, #00f0ff, #00d0ff, #00a0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 180, 255, 0.32);
+}
+
+.contact-btn {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 400;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(0, 118, 255, 0.6);
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+  display: none;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Mobile Dropdown Menu Box */
+.mobile-menu-box {
+  position: absolute;
+  top: 60px; /* Adjust according to your layout */
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Mobile Nav Links */
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mobile-nav-links a:hover {
+  color: grey;
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 10px;
+  }
+
+  .mobile-menu-icon {
+    font-size: 25px;
+  }
+
+  .mobile-menu-box {
+    width: 180px;
+  }
+
+  .mobile-nav-links a {
+    font-size: 16px;
+  }
+}
+
+/* Media query for smaller mobile devices */
+@media (max-width: 480px) {
+  .logo {
+    margin-left: 10px;
+  }
+
+  .mobile-menu-icon {
+    font-size: 20px;
+  }
+
+  .mobile-menu-box {
+    width: 150px;
+  }
+
+  .mobile-nav-links a {
+    font-size: 14px;
+  }
+}
