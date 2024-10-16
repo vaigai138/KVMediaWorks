@@ -152,7 +152,7 @@ select{
     background-color: #00bfff96;
 }
 
-@media (max-width: 500px){
+@media (max-width: 300px){
     .registration-form{
         align-items: center;
         width: 85%;
