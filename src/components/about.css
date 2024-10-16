@@ -102,9 +102,22 @@ hr {
         overflow: hidden; /* Hide overflow */
         font-family: cursive;
     }
+
+    .showreel-container iframe {
+        width: 100%;
+        height: auto;
+        max-width: 350px; /* Adjust the width as needed */
+        max-height: 200px; /* Adjust the height as needed */
+    }
+
+    .showreel-thumbnail {
+        max-width: 350px; /* Reduce the size of the thumbnail */
+        height: auto;
+    }
 }
 @media (min-width: 1024px) {
     .about-us-mobile{
         display: none;
     }
 }
+
