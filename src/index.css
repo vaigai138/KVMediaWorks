@@ -28,6 +28,11 @@
     height: 560px; /* Adjust height for mobile */
   }
 }
+@media (max-width: 467px) {
+  .responsive-iframe {
+    height: 560px; /* Adjust height for mobile */
+  }
+}
 
 
 
