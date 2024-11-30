@@ -25,16 +25,9 @@
 /* Mobile view (screens smaller than 768px) */
 @media (max-width: 767px) {
   .responsive-iframe {
-    height: 560px; /* Adjust height for mobile */
+    height: 650px; /* Adjust height for mobile */
   }
 }
-@media (max-width: 467px) {
-  .responsive-iframe {
-    height: 560px; /* Adjust height for mobile */
-  }
-}
-
-
 
 
  .swiper-pagination-bullet {
