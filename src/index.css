@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ @layer base{
+    html{
+        
+        color: #ffffff;
+        
+    }
+    body{
+        overflow-x: hidden;
+    }
+ }
+
+ /* Default height for larger screens (desktop/tablet) */
+.responsive-iframe {
+  height: 320px;
+  transition: height 0.3s ease; /* Optional: smooth transition */
+}
+
+/* Mobile view (screens smaller than 768px) */
+@media (max-width: 767px) {
+  .responsive-iframe {
+    height: 560px; /* Adjust height for mobile */
+  }
+}
+
+
+
+
+ .swiper-pagination-bullet {
+  background-color: #e4f2ff; /* Change dot color to your desired color */
+  opacity: 1; /* Make sure it's fully opaque */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #016ed5; /* Change active dot color */
+}
+
+
+body{
+  background: linear-gradient(to bottom right, #1e3a8a, #0f172a); 
+  
+}
+
+
+ @layer components{
+    .menu-item{
+        @apply text-xs md:text-sm font-normal text-white relative cursor-pointer after:content-[''] after:w-full after:h-[3px] after:bg-primary after:absolute after:left-0 after:-bottom-2 after:rounded after:-translate-x-11 after:opacity-0 after:transition-all after:hover:translate-x-0 after:hover:opacity-100;
+    } 
+
+    .primary-btn{
+        @apply h-9 md:h-11 bg-primary text-white text-sm px-6 rounded border border-primary hover:bg-transparent hover:text-primary;
+    }
+    .ui-circle{
+        @apply w-[130px] h-[130px] md:w-[180px] md:h-[180px] origin-top-left rotate-[-36.39deg] rounded-[117px] border-b-2 border-sky-500
+    }
+    .hero-img {
+        @apply w-[120px] md:w-[139px] 
+    }
+    .input-box{
+      @apply bg-gradient-to-br from-blue-950 to-slate-900 rounded border border-blue-800/40 px-4 py-3 placeholder:text-slate-400 placeholder:text-sm mb-5 focus:outline-none focus:border-cyan-500 focus:border-2;
+    }
+
+ }
+
+ .hero-img{
+    width: 300px;
+ }
+
+
+ @media (max-width: 640px) {
+    .hero-img {
+      width: 100%; /* Make image responsive */
+      height: auto; /* Maintain aspect ratio */
+    }
+    
+    .text-xss {
+      font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+  
+    .primary-btn {
+      padding: 0.5rem 1rem; /* Adjust button padding for mobile */
+      font-size: 0.875rem; /* Font size for mobile */
+    }
+
+   
+  
+    .gap-10 {
+      gap: 2rem; /* Increase gap for better spacing on mobile */
+    }
+  }
+  

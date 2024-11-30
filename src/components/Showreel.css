@@ -1,0 +1,45 @@
+.showreel-container {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .showreel-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .thumbnail {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .thumbnail-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  
+  .showreel-video {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
