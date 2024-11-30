@@ -7,12 +7,12 @@ import Showreel from './components/Showreel';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Whatwedo from './components/Whatwedo';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import MoreWorks from './components/MoreWorks';
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         {/* Route for the main page */}
         <Route
@@ -43,7 +43,7 @@ const App = () => {
         {/* Route for the MoreWorks page */}
         <Route path="/works" element={<MoreWorks />}/>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
