@@ -6,7 +6,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css/navigation';
 
 // Import client data
-import { BeardoShorts, NishkaShorts, VivinShorts, ALArogyaShorts, NiveaShorts, BusinessShorts, DivyaRavirajShorts, AdvertisementShorts } from '../utils/moreworks/shorts/shorts';
+import { BeardoShorts, NishkaShorts, VivinShorts, ALArogyaShorts, NiveaShorts, BusinessShorts, DivyaRavirajShorts, AdvertisementShorts,SantoUKShorts, SampleShorts } from '../utils/moreworks/shorts/shorts';
 import { BeardoLong, NiveaLong } from '../utils/moreworks/longs/longs';
 
 const MoreWorks = () => {
@@ -17,13 +17,15 @@ const MoreWorks = () => {
   // Combine clients' data dynamically
   const shortsClients = [
     { name: "Beardo", data: BeardoShorts },
+    { name: "Santo UK", data: SantoUKShorts },
     { name: "Dr. Nishka", data: NishkaShorts },
     { name: "Dr. Vivin", data: VivinShorts },
     { name: "AL Arogya", data: ALArogyaShorts },
     { name: "Dr. Nivea", data: NiveaShorts },
     { name: "Business", data: BusinessShorts },
     { name: "Divya Raviraj", data: DivyaRavirajShorts },
-    { name: "Ad Videos", data: AdvertisementShorts }
+    { name: "Ad Videos", data: AdvertisementShorts },
+    { name: "Sample Videos", data: SampleShorts },
   ];
 
   const longClients = [

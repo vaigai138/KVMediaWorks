@@ -99,6 +99,18 @@ import be5 from "./images/Beardo/be5.png"
 import be6 from "./images/Beardo/be6.png"
 import be7 from "./images/Beardo/be7.png"
 
+//Santo UK Images
+
+import san1 from "./images/SantoUK/SanUK1.png"
+import san2 from "./images/SantoUK/SanUK2.png"
+import san3 from "./images/SantoUK/SanUK3.png"
+import san4 from "./images/SantoUK/SanUK4.png"
+import san5 from "./images/SantoUK/SanUK5.png"
+import san6 from "./images/SantoUK/SanUK6.png"
+
+//Sample Videos
+
+import samp1 from "./images/Sample/Sample1.png"
 
 
 
@@ -498,3 +510,44 @@ export const AdvertisementShorts = [
 ]
 
 
+export const SantoUKShorts = [
+  {
+    id: "1",
+    coverImage: san1,
+    videoLink: "https://drive.google.com/file/d/1RVHr4IGSTgZ218My8H44nd64hBUOSptE/preview"
+  },
+  {
+    id: "2",
+    coverImage:san2,
+    videoLink: "https://drive.google.com/file/d/1qagMmFA-saUf8ggT04w7OuwBngNYn1vF/preview" 
+  },
+  {
+    id: "3",
+    coverImage:san3,
+    videoLink: "https://drive.google.com/file/d/1RXR2eECwj8nHLQQ5HUATTjaxEsl3wGmX/preview"
+  },
+  {
+    id: "4",
+    coverImage:san4,
+    videoLink: "https://drive.google.com/file/d/182ls8LSb8hKFh7Rls-HChQ5tF1IHRMuW/preview"
+  },
+  {
+    id: "5",
+    coverImage: san5,
+    videoLink: "https://drive.google.com/file/d/1shzqGDwWxLXf80m4nKU9Rb9RgMDS_8qc/preview"
+  },
+  {
+    id: "6",
+    coverImage: san6,
+    videoLink: "https://drive.google.com/file/d/1vdJ1JfpCGHp3d-FH_Qxu2KXVGwGYFmv2/preview"
+  }
+]
+
+
+export const SampleShorts = [
+  {
+    id: "1",
+    coverImage: samp1,
+    videoLink: "https://drive.google.com/file/d/1XGaTXnxynmfPSIXqEU0vM0Hkm0ggmZY5/preview"
+  },
+]
