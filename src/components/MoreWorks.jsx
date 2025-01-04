@@ -6,7 +6,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css/navigation';
 
 // Import client data
-import { BeardoShorts, NishkaShorts, VivinShorts, ALArogyaShorts, NiveaShorts, BusinessShorts, DivyaRavirajShorts, AdvertisementShorts,SantoUKShorts, SampleShorts } from '../utils/moreworks/shorts/shorts';
+import { BeardoShorts, NishkaShorts, VivinShorts, ALArogyaShorts, NiveaShorts, BusinessShorts, DivyaRavirajShorts, AdvertisementShorts,SantoUKShorts, SampleShorts,MelbyShorts ,StockInkShorts} from '../utils/moreworks/shorts/shorts';
 import { BeardoLong, NiveaLong } from '../utils/moreworks/longs/longs';
 
 const MoreWorks = () => {
@@ -16,8 +16,10 @@ const MoreWorks = () => {
 
   // Combine clients' data dynamically
   const shortsClients = [
+    { name: "StockInk", data: StockInkShorts },
     { name: "Beardo", data: BeardoShorts },
     { name: "Santo UK", data: SantoUKShorts },
+    { name: "Vanakam Melby", data: MelbyShorts },
     { name: "Dr. Nishka", data: NishkaShorts },
     { name: "Dr. Vivin", data: VivinShorts },
     { name: "AL Arogya", data: ALArogyaShorts },

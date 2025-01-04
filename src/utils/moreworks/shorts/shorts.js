@@ -60,6 +60,37 @@ import ni15 from "./images/Nivea/ni15.png"
 import ni16 from "./images/Nivea/ni16.png"
 import ni17 from "./images/Nivea/ni17.png"
 import ni18 from "./images/Nivea/ni18.png"
+import ni19 from "./images/Nivea/ni19.png"
+import ni20 from "./images/Nivea/ni20.png"
+import ni21 from "./images/Nivea/ni21.png"
+import ni22 from "./images/Nivea/ni22.png"
+import ni23 from "./images/Nivea/ni23.png"
+import ni24 from "./images/Nivea/ni24.png"
+import ni25 from "./images/Nivea/ni25.png"
+import ni26 from "./images/Nivea/ni26.png"
+import ni27 from "./images/Nivea/ni27.png"
+import ni28 from "./images/Nivea/ni28.png"
+import ni29 from "./images/Nivea/ni29.png"
+import ni30 from "./images/Nivea/ni30.png"
+import ni31 from "./images/Nivea/ni31.png"
+import ni32 from "./images/Nivea/ni32.png"
+import ni33 from "./images/Nivea/ni33.png"
+import ni34 from "./images/Nivea/ni34.png"
+import ni35 from "./images/Nivea/ni35.png"
+import ni36 from "./images/Nivea/ni36.png"
+import ni37 from "./images/Nivea/ni37.png"
+import ni38 from "./images/Nivea/ni38.png"
+import ni39 from "./images/Nivea/ni39.png"
+import ni40 from "./images/Nivea/ni40.png"
+import ni41 from "./images/Nivea/ni41.png"
+import ni42 from "./images/Nivea/ni42.png"
+import ni43 from "./images/Nivea/ni43.png"
+import ni44 from "./images/Nivea/ni44.png"
+import ni45 from "./images/Nivea/ni45.png"
+import ni46 from "./images/Nivea/ni46.png"
+import ni47 from "./images/Nivea/ni47.png"
+
+
 
 
 
@@ -112,6 +143,24 @@ import san6 from "./images/SantoUK/SanUK6.png"
 
 import samp1 from "./images/Sample/Sample1.png"
 
+
+//Melby Images
+import mel1 from "./images/Melby/mel1.jpg"
+import mel2 from "./images/Melby/mel2.jpg"
+
+
+//StockInk Images
+import si1 from "./images/StockInk/si1.png"
+import si2 from "./images/StockInk/si2.png"
+import si3 from "./images/StockInk/si3.png"
+import si4 from "./images/StockInk/si4.png"
+import si5 from "./images/StockInk/si5.png"
+import si6 from "./images/StockInk/si6.png"
+import si7 from "./images/StockInk/si7.png"
+import si8 from "./images/StockInk/si8.png"
+import si9 from "./images/StockInk/si9.png"
+import si10 from "./images/StockInk/si10.png"
+import si11 from "./images/StockInk/si11.png"
 
 
 export const BeardoShorts = [
@@ -336,6 +385,151 @@ export const NiveaShorts = [
     id: "18",
     coverImage: ni18,
     videoLink: "https://drive.google.com/file/d/1KZ11XMrj8d0iYyn1hYMjfCf3M2TCCMvK/preview"
+  },
+  {
+    id: "19",
+    coverImage: ni19,
+    videoLink: "https://drive.google.com/file/d/1LSKxZSFU7IsyIZG3WmI5wIMZTauKdQSe/preview"
+  },
+  {
+    id: "20",
+    coverImage: ni20,
+    videoLink: "https://drive.google.com/file/d/1EeLbMHphX_OvXd9vziZz5_YmbpTrRTv3/preview"
+  },
+  {
+    id: "21",
+    coverImage: ni21,
+    videoLink: "https://drive.google.com/file/d/1XbU_70tpFHmp5m9ypF40454uClsE9Vam/preview"
+  },
+  {
+    id: "22",
+    coverImage: ni22,
+    videoLink: "https://drive.google.com/file/d/1R5zMAbVQLF2uuma0JZav8UnL6mzKzkHh/preview"
+  },
+  {
+    id: "23",
+    coverImage: ni23,
+    videoLink: "https://drive.google.com/file/d/1961MpP6DEZIIjM_c5t4ZUTYWjRV56X-8/preview"
+  },
+  {
+    id: "24",
+    coverImage: ni24,
+    videoLink: "https://drive.google.com/file/d/1RQTT3SKQYmb_ehKQqA_KH9yrfcfdmgks/preview"
+  },
+  {
+    id: "25",
+    coverImage: ni25,
+    videoLink: "https://drive.google.com/file/d/1qpqStC2PFm2sUPW6gImiRoRh-cv8_7wb/preview"
+  },
+  {
+    id: "26",
+    coverImage: ni26,
+    videoLink: "https://drive.google.com/file/d/1e_EEQiT0DYBWpE4yVdkX3T_S2PYV9wQj/preview"
+  },
+  {
+    id: "27",
+    coverImage: ni27,
+    videoLink: "https://drive.google.com/file/d/1pjDKpa8rBK4fFM-18qLFHM-LQL4YXfV4/preview"
+  },
+  {
+    id: "28",
+    coverImage: ni28,
+    videoLink: "https://drive.google.com/file/d/1GrEVxmyw1Oaq5HzrR0QMbOwtqf9XJTBQ/preview"
+  },
+  {
+    id: "29",
+    coverImage: ni29,
+    videoLink: "https://drive.google.com/file/d/19bJ_c9_hEiFVQAfEjU_VoIPeWxSuOuhQ/preview"
+  },
+  {
+    id: "30",
+    coverImage: ni30,
+    videoLink: "https://drive.google.com/file/d/1AwmMxFyV2h9GWZUregQ6V2R_cS0jUE-D/preview"
+  },
+  {
+    id: "31",
+    coverImage: ni31,
+    videoLink: "https://drive.google.com/file/d/1LdROnRc6r7lf2qYva3-7H47EE60PNU36/preview"
+  },
+  {
+    id: "32",
+    coverImage: ni32,
+    videoLink: "https://drive.google.com/file/d/1PSqXcs50L6mJph5BG_GMeiAONSVm4UEc/preview"
+  },
+  {
+    id: "33",
+    coverImage: ni33,
+    videoLink: "https://drive.google.com/file/d/1Yc9mJ1GSDIaicmqA6COjpHWNV4D87qnY/preview"
+  },
+  {
+    id: "34",
+    coverImage: ni34,
+    videoLink: "https://drive.google.com/file/d/1crYyHaD_gmA77w6xtXUTuq5VbznTbfy4/preview"
+  },
+  {
+    id: "35",
+    coverImage: ni35,
+    videoLink: "https://drive.google.com/file/d/1lNpadgsbBWPrT3ry41M3BL1ONi-k9zHH/preview"
+  },
+  {
+    id: "36",
+    coverImage: ni36,
+    videoLink: "https://drive.google.com/file/d/1vR3s07jd4XbHzmvd9PlSLbWUilHytow6/preview"
+  },
+  {
+    id: "37",
+    coverImage: ni37,
+    videoLink: "https://drive.google.com/file/d/1yl69yO3kTypTNx4vWu30B_TMtBKAHiwR/preview"
+  },
+  {
+    id: "38",
+    coverImage: ni38,
+    videoLink: "https://drive.google.com/file/d/10GmgdiTDfoVBbfKaWXIooPhNqUbClILZ/preview"
+  },
+  {
+    id: "39",
+    coverImage: ni39,
+    videoLink: "https://drive.google.com/file/d/1GoCT9YfHwCl4NDp-EOs0TXt4vX1w24x1/preview"
+  },
+  {
+    id: "40",
+    coverImage: ni40,
+    videoLink: "https://drive.google.com/file/d/1R-k975M5YcOYvsADHcEBgMOsHsXJgXNA/preview"
+  },
+  {
+    id: "41",
+    coverImage: ni41,
+    videoLink: "https://drive.google.com/file/d/1Ry9AUb3NylcWlvkJ5KxatP3qpmR3vJlr/preview"
+  },
+  {
+    id: "42",
+    coverImage: ni42,
+    videoLink: "https://drive.google.com/file/d/1XIsUpE-pOA01W7yuWSsiLfAjULYKYUMD/preview"
+  },
+  {
+    id: "43",
+    coverImage: ni43,
+    videoLink: "https://drive.google.com/file/d/1c16bqalyjmt-zObQ86M5YspCZUObGkjD/preview"
+  },
+  {
+    id: "44",
+    coverImage: ni44,
+    videoLink: "https://drive.google.com/file/d/1d5vpxAanbyDA8kXTrVWBuMTmqfhLKDLd/preview"
+  },
+  {
+    id: "45",
+    coverImage: ni45,
+    videoLink: "https://drive.google.com/file/d/1gC16FIDkCfC2AAs9g493BiVNPRrbjiJs/preview"
+  },
+  {
+    id: "46",
+    coverImage: ni46,
+    videoLink: "https://drive.google.com/file/d/1pM21T99TQLa0IB-UJVWDa2-25BAIxdc0/preview"
+  },
+  {
+    id: "47",
+    coverImage: ni47,
+    videoLink: "https://drive.google.com/file/d/1zKEZqLkI0G1F6jsC4HkZSySvbGvPKfW-/preview"
   }
 ]
 
@@ -543,11 +737,73 @@ export const SantoUKShorts = [
   }
 ]
 
+export const MelbyShorts = [
+  {
+    id: "1",
+    coverImage: mel1,
+    videoLink: "https://drive.google.com/file/d/1RVHr4IGSTgZ218My8H44nd64hBUOSptE/preview"
+  },
+  {
+    id: "2",
+    coverImage: mel2,
+    videoLink: "https://drive.google.com/file/d/1RVHr4IGSTgZ218My8H44nd64hBUOSptE/preview"
+  },
+]
 
 export const SampleShorts = [
   {
     id: "1",
     coverImage: samp1,
     videoLink: "https://drive.google.com/file/d/1XGaTXnxynmfPSIXqEU0vM0Hkm0ggmZY5/preview"
+  },
+]
+
+export const StockInkShorts = [
+  {
+    id: "1",
+    coverImage: si1,
+    videoLink: "https://drive.google.com/file/d/1nt-wwPU9rt_8keIn4c8CoWC8jLr7HKJ5/preview"
+  },
+  {
+    id: "2",
+    coverImage: si10,
+    videoLink: "https://drive.google.com/file/d/1X_n0WBYvr-ngGVjbv_4OrNQD0VgxALHx/preview"
+  },{
+    id: "3",
+    coverImage: si3,
+    videoLink: "https://drive.google.com/file/d/1CE5dWFwLS97SDTnIS3f2x_-QBqPu57nT/preview"
+  },{
+    id: "4",
+    coverImage: si4,
+    videoLink: "https://drive.google.com/file/d/1oPknaHnsEFDB7RE_zxSnLR4QatVQe9xE/preview"
+  },{
+    id: "5",
+    coverImage: si5,
+    videoLink: "https://drive.google.com/file/d/1xJRi_xXYFuC5TZhA74NDkAFO6AAFfTBE/preview"
+  },{
+    id: "6",
+    coverImage: si6,
+    videoLink: "https://drive.google.com/file/d/1qAgK8MuMMgovblVDTe4np6d82U-sLA-_/preview"
+  },{
+    id: "7",
+    coverImage: si7,
+    videoLink: "https://drive.google.com/file/d/1lKgp2vv5890v-D2366DruFqv8n1RNZ0u/preview"
+  },{
+    id: "8",
+    coverImage: si8,
+    videoLink: "https://drive.google.com/file/d/1kVFaLW1xMpfum02ueVkvTZ0bkmzXvYCu/preview"
+  },{
+    id: "9",
+    coverImage: si9,
+    videoLink: "https://drive.google.com/file/d/1ABIcXbOnz7SnWvdoLkAT0DyBsw_d1Z_s/preview"
+  },{
+    id: "10",
+    coverImage: si2,
+    videoLink: "https://drive.google.com/file/d/1EWVE2u_C0AUsusZZqpKqk65DoXtjvfrb/preview"
+  },
+  {
+    id: "11",
+    coverImage: si11,
+    videoLink: "https://drive.google.com/file/d/1uEqPOJD-X-EZWgKKbyjn1NnNI2wW2UcK/preview"
   },
 ]
