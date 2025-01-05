@@ -141,7 +141,7 @@ import san6 from "./images/SantoUK/SanUK6.png"
 
 //Sample Videos
 
-import samp1 from "./images/Sample/Sample1.png"
+import samp1 from "./images/Sample/sample1.png"
 
 
 //Melby Images
