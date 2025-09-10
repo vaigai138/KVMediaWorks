@@ -1,218 +1,320 @@
 import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css/navigation';
+import {
+  FaRegPlayCircle,
+  FaInstagram,
+  FaLinkedin,
+  FaEnvelope,
+  FaPhone,
+} from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 
-// Import client data
-import { BeardoShorts, NishkaShorts, VivinShorts, ALArogyaShorts, NiveaShorts, BusinessShorts, DivyaRavirajShorts, AdvertisementShorts,SantoUKShorts, SampleShorts,MelbyShorts ,StockInkShorts} from '../utils/moreworks/shorts/shorts';
-import { BeardoLong, NiveaLong } from '../utils/moreworks/longs/longs';
+const shortFormVideos = [
+  { 
+    client: 'Scratch Learn',   
+    title: 'Short Video 1', 
+    link: 'https://www.youtube.com/embed/lXWFcj6dhOs', 
+    thumbnail: 'https://img.youtube.com/vi/lXWFcj6dhOs/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Santu In UK', 
+    title: 'Short Video 2', 
+    link: 'https://www.youtube.com/embed/iJyzJXLGp9E', 
+    thumbnail: 'https://img.youtube.com/vi/iJyzJXLGp9E/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Santu In UK', 
+    title: 'Short Video 3', 
+    link: 'https://www.youtube.com/embed/SFpCJlJHPG8', 
+    thumbnail: 'https://img.youtube.com/vi/SFpCJlJHPG8/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Santu In UK', 
+    title: 'Short Video 4', 
+    link: 'https://www.youtube.com/embed/sRKKLyJdM1A', 
+    thumbnail: 'https://img.youtube.com/vi/sRKKLyJdM1A/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Spyka', 
+    title: 'Short Video 5', 
+    link: 'https://www.youtube.com/embed/KN5E0ZKDaUU', 
+    thumbnail: 'https://img.youtube.com/vi/KN5E0ZKDaUU/maxresdefault.jpg' 
+  },
+  { 
+    client: 'InkCharts', 
+    title: 'Short Video 6', 
+    link: 'https://www.youtube.com/embed/GlXPyudoCFk', 
+    thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' 
+  },
+  { 
+    client: 'InkCharts', 
+    title: 'Short Video 7', 
+    link: 'https://www.youtube.com/embed/vnhVPFN9KvY', 
+    thumbnail: 'https://img.youtube.com/vi/vnhVPFN9KvY/maxresdefault.jpg' 
+  },
+  { 
+    client: 'InkCharts', 
+    title: 'Short Video 8', 
+    link: 'https://www.youtube.com/embed/GkCpfK1i06E', 
+    thumbnail: 'https://img.youtube.com/vi/GkCpfK1i06E/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Game Changer', 
+    title: 'Short Video 9', 
+    link: 'https://www.youtube.com/embed/65-eTqZ5ni4', 
+    thumbnail: 'https://img.youtube.com/vi/65-eTqZ5ni4/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Dr.Balaji', 
+    title: 'Short Video 10', 
+    link: 'https://www.youtube.com/embed/vkmUe7dujs8', 
+    thumbnail: 'https://img.youtube.com/vi/vkmUe7dujs8/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Spyka', 
+    title: 'Short Video 11', 
+    link: 'https://www.youtube.com/embed/your_short_link11', 
+    thumbnail: 'https://img.youtube.com/vi/your_short_link11/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Scratch Learn', 
+    title: 'Short Video 12', 
+    link: 'https://www.youtube.com/embed/your_short_link12', 
+    thumbnail: 'https://img.youtube.com/vi/your_short_link12/maxresdefault.jpg' 
+  },
+];
+
+
+const longFormVideos = [
+  { client: 'Santu UK', title: 'Long Video Intro', link: 'https://www.youtube.com/embed/Ijhy7m2sDeA', thumbnail: 'https://img.youtube.com/vi/Ijhy7m2sDeA/maxresdefault.jpg' },
+  { client: 'Focas', title: 'Long Video', link: 'https://www.youtube.com/embed/5D31g4eMFbA', thumbnail: 'https://img.youtube.com/vi/5D31g4eMFbA/maxresdefault.jpg' },
+  { client: 'Santu UK', title: 'Long Video 01', link: 'https://www.youtube.com/embed/gYVne66AaxE', thumbnail: 'https://img.youtube.com/vi/gYVne66AaxE/maxresdefault.jpg' },
+  { client: 'Beardo', title: 'Long Video', link: 'https://www.youtube.com/embed/9KICweMciK4', thumbnail: 'https://img.youtube.com/vi/9KICweMciK4/maxresdefault.jpg' },
+  { client: 'Beardo', title: 'Long Video', link: 'https://www.youtube.com/embed/_Cao_r2swWQ', thumbnail: 'https://img.youtube.com/vi/_Cao_r2swWQ/maxresdefault.jpg' },
+  { client: 'Beardo', title: 'Long Video', link: 'https://www.youtube.com/embed/ta5uEqzhTBo', thumbnail: 'https://img.youtube.com/vi/ta5uEqzhTBo/maxresdefault.jpg' },
+];
 
 const MoreWorks = () => {
-  // State to track which thumbnail is clicked for each client
-  const [clickedShorts, setClickedShorts] = useState({});
-  const [clickedLongs, setClickedLongs] = useState({});
+  const [playingIndex, setPlayingIndex] = useState(null);
 
-  // Combine clients' data dynamically
-  const shortsClients = [
-    { name: "StockInk", data: StockInkShorts },
-    { name: "Beardo", data: BeardoShorts },
-    { name: "Santo UK", data: SantoUKShorts },
-    { name: "Vanakam Melby", data: MelbyShorts },
-    { name: "Dr. Nishka", data: NishkaShorts },
-    { name: "Dr. Vivin", data: VivinShorts },
-    { name: "AL Arogya", data: ALArogyaShorts },
-    { name: "Dr. Nivea", data: NiveaShorts },
-    { name: "Business", data: BusinessShorts },
-    { name: "Divya Raviraj", data: DivyaRavirajShorts },
-    { name: "Ad Videos", data: AdvertisementShorts },
-    { name: "Sample Videos", data: SampleShorts },
-  ];
-
-  const longClients = [
-    { name: "Beardo", data: BeardoLong },
-    { name: "Dr. Nivea", data: NiveaLong }
-  ];
-
-  // Function to handle click event on thumbnail for short videos
-  const handleThumbnailClickShort = (clientIndex, index) => {
-    setClickedShorts(prevState => ({
-      ...prevState,
-      [clientIndex]: index
-    }));
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   };
 
-  // Function to handle click event on thumbnail for long videos
-  const handleThumbnailClickLong = (clientIndex, index) => {
-    setClickedLongs(prevState => ({
-      ...prevState,
-      [clientIndex]: index
-    }));
-  };
+  const renderShorts = (start, end) =>
+    shortFormVideos.slice(start, end).map((video, index) => {
+      const id = `short-${start + index}`;
+      const isPlaying = playingIndex === id;
+      return (
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          key={id}
+          className="relative group aspect-[9/16] rounded-lg overflow-hidden"
+        >
+          {isPlaying ? (
+            <iframe
+              className="w-full h-full rounded-lg"
+              src={`${video.link}?autoplay=1`}
+              title={video.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <>
+              <img
+                src={video.thumbnail}
+                alt={video.title}
+                className="w-full h-full object-cover rounded-lg transition-transform group-hover:scale-105"
+                onClick={() => setPlayingIndex(id)}
+              />
+              <div
+                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center"
+                onClick={() => setPlayingIndex(id)}
+              >
+                <FaRegPlayCircle className="text-white text-6xl mb-2" />
+                <div className="text-white text-sm font-semibold">{video.title}</div>
+                <div className="text-white text-xs italic">{video.client}</div>
+              </div>
+            </>
+          )}
+        </motion.div>
+      );
+    });
+
+  const renderLongs = (start, end) =>
+    longFormVideos.slice(start, end).map((video, index) => {
+      const id = `long-${start + index}`;
+      const isPlaying = playingIndex === id;
+      return (
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          key={id}
+          className="relative group aspect-video rounded-lg overflow-hidden"
+        >
+          {isPlaying ? (
+            <iframe
+              className="w-full h-full rounded-lg"
+              src={`${video.link}?autoplay=1`}
+              title={video.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <>
+              <img
+                src={video.thumbnail}
+                alt={video.title}
+                className="w-full h-full object-cover rounded-lg transition-transform group-hover:scale-105"
+                onClick={() => setPlayingIndex(id)}
+              />
+              <div
+                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center"
+                onClick={() => setPlayingIndex(id)}
+              >
+                <FaRegPlayCircle className="text-white text-6xl mb-2" />
+                <div className="text-white text-sm font-semibold">{video.title}</div>
+                <div className="text-white text-xs italic">{video.client}</div>
+              </div>
+            </>
+          )}
+        </motion.div>
+      );
+    });
 
   return (
-    <div>
-      <section className="max-w-screen-xl mx-auto px-6 pb-0 mt-6" id="moreworks">
-        <h5 className="text-primary text-2xl md:text-4xl font-semibold text-center pb-8 md:pb-14">Works</h5>
+    <>
+      {/* Stats Section */}
+      
 
-        {/* Short Form Content Section */}
-        <div className="pb-8 bg-gradient-to-br from-blue-950 to-slate-900 rounded-lg border border-blue-800/40 p-4 md:p-8 mb-6">
-          <h6 className="text-primary text-2xl md:text-4xl font-medium text-center md:text-left pb-10 md:pb-14">Short Form Content</h6>
-          {shortsClients.map((client, clientIndex) => (
-            <div key={clientIndex}>
-              <h6 className="text-primary text-xl font-medium pb-6 mt-3">{client.name}</h6>
-              <Swiper
-                spaceBetween={20}
-                slidesPerView={1}
-                pagination={{ clickable: true }}
-                navigation
-                breakpoints={{
-                  640: { slidesPerView: 2 },
-                  768: { slidesPerView: 3 },
-                  1024: { slidesPerView: 6 },
-                }}
-                modules={[Pagination, Navigation]}
-              >
-                {client.data.map((work, idx) => (
-                  <SwiperSlide key={idx}>
-                    <div className="relative block">
-                      {/* Show thumbnail image only if it hasn't been clicked */}
-                      {clickedShorts[clientIndex] !== idx && (
-                        <div className="relative w-full">
-                          {/* Thumbnail image */}
-                          <img
-                            src={work.coverImage}
-                            alt={`${client.name} Short ${idx + 1}`}
-                            className="rounded-lg w-full cursor-pointer"
-                            onClick={() => handleThumbnailClickShort(clientIndex, idx)} // Handle click
-                          />
+      {/* Client Works Section */}
+      <motion.section
+        id="moreworks"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="max-w-screen-xl mx-auto px-6 pb-0 mt-6"
+      >
+        <h5 className="text-primary text-3xl md:text-5xl font-extrabold text-center pb-2 font-serif tracking-wide">
+          Client Works 🎬
+        </h5>
+        <p className="text-center text-blue-300 italic text-md md:text-lg">
+          “Bringing stories to life, one frame at a time.”
+        </p>
 
-                          {/* Play button */}
-                          <div className="absolute inset-0 flex justify-center items-center">
-                            <button
-                              onClick={() => handleThumbnailClickShort(clientIndex, idx)} // Handle play button click
-                              className="bg-opacity-60 text-primary rounded-full p-4 hover:bg-opacity-80 focus:outline-none"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                className="w-12 h-12"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M5 3l14 9-14 9V3z"
-                                />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      )}
+        <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="max-w-screen-xl mx-auto px-6 py-12"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          <div>
+            <h3 className="text-4xl md:text-5xl font-bold text-primary">
+              <CountUp end={450} duration={3} />+
+            </h3>
+            <p className="text-gray-300 mt-2">Videos Edited</p>
+          </div>
+          <div>
+            <h3 className="text-4xl md:text-5xl font-bold text-primary">
+              <CountUp end={50} duration={3} />+
+            </h3>
+            <p className="text-gray-300 mt-2">Clients Worked With</p>
+          </div>
+          <div>
+            <h3 className="text-4xl md:text-5xl font-bold text-primary">
+              <CountUp end={3} duration={3} />+
+            </h3>
+            <p className="text-gray-300 mt-2">Years Experience</p>
+          </div>
+        </div>
+      </motion.section>
 
-                      {/* Show video only if the thumbnail is clicked */}
-                      {clickedShorts[clientIndex] === idx && (
-                        <iframe
-                          width="100%" // Set iframe width to 100% of the container
-                          height="320" // Set iframe height (can be adjusted if needed)
-                          src={work.videoLink}
-                          className="rounded-lg responsive-iframe"
-                          title={`${client.name} Short ${idx + 1}`}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      )}
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          {renderShorts(0, 4)}
         </div>
 
-        {/* Long Form Content Section */}
-        <div className="pb-8 bg-gradient-to-br from-blue-950 to-slate-900 rounded-lg border border-blue-800/40 p-4 md:p-8 mb-8">
-          <h6 className="text-primary text-2xl md:text-4xl font-medium text-center md:text-left pb-10 md:pb-14">Long Form Content</h6>
-          {longClients.map((client, clientIndex) => (
-            <div key={clientIndex}>
-              <h6 className="text-primary text-xl font-medium pb-6">{client.name}</h6>
-              <Swiper
-                spaceBetween={20}
-                slidesPerView={1}
-                pagination={{ clickable: true }}
-                navigation
-                breakpoints={{
-                  640: { slidesPerView: 2 },
-                  768: { slidesPerView: 3 },
-                  1024: { slidesPerView: 4 },
-                }}
-                modules={[Pagination, Navigation]}
-              >
-                {client.data.map((work, idx) => (
-                  <SwiperSlide key={idx}>
-                    <div className="relative block">
-                      {/* Show thumbnail image only if it hasn't been clicked */}
-                      {clickedLongs[clientIndex] !== idx && (
-                        <div className="relative w-full">
-                          {/* Thumbnail image */}
-                          <img
-                            src={work.coverImage}
-                            alt={`${client.name} Long ${idx + 1}`}
-                            className="rounded-lg w-full cursor-pointer"
-                            onClick={() => handleThumbnailClickLong(clientIndex, idx)} // Handle click
-                          />
-
-                          {/* Play button */}
-                          <div className="absolute inset-0 flex justify-center items-center">
-                            <button
-                              onClick={() => handleThumbnailClickLong(clientIndex, idx)} // Handle play button click
-                              className="text-primary rounded-full p-4 hover:bg-opacity-80 focus:outline-none"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                className="w-12 h-12"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M5 3l14 9-14 9V3z"
-                                />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Show video only if the thumbnail is clicked */}
-                      {clickedLongs[clientIndex] === idx && (
-                        <iframe
-                          width="100%" // Set iframe width to 100% of the container
-                          height="100%" // Set iframe height (it will take the full container height)
-                          src={work.videoLink}
-                          title={`${client.name} Long ${idx + 1}`}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="rounded-lg"
-                        ></iframe>
-                      )}
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+          {renderLongs(0, 3)}
         </div>
-      </section>
-    </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          {renderShorts(4, 8)}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20">
+          {renderLongs(3, 6)}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          {renderShorts(8, 12)}
+        </div>
+      </motion.section>
+
+      {/* Contact Section */}
+      <motion.section
+        id="contact"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="py-16 mt-10"
+      >
+        <div className="max-w-screen-md mx-auto text-center px-6">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Let’s Work Together 🚀
+          </h3>
+          <p className="text-gray-300 mb-8">
+            Have a project in mind? Reach out and let’s bring your vision to
+            life.
+          </p>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+            <a
+              href="mailto:vaigaivendhan138@gmail.com"
+              className="flex items-center gap-2 text-white hover:text-primary transition"
+            >
+              <FaEnvelope className="text-xl" /> vaigaivendhan138@gmail.com
+            </a>
+            <a
+              href="tel:+917604895101"
+              className="flex items-center gap-2 text-white hover:text-primary transition"
+            >
+              <FaPhone className="text-xl" /> +91 7604895101
+            </a>
+          </div>
+
+          <div className="flex justify-center gap-6 text-white text-2xl">
+            <a
+              href="https://instagram.com/imkv__"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-400 transition"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="http://linkedin.com/in/vaigai-vendhan-9b142b258"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
+      </motion.section>
+    </>
   );
 };
 
