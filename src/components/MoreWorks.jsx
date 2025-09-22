@@ -73,14 +73,14 @@ const shortFormVideos = [
   { 
     client: 'Spyka', 
     title: 'Short Video 11', 
-    link: 'https://www.youtube.com/embed/your_short_link11', 
-    thumbnail: 'https://img.youtube.com/vi/your_short_link11/maxresdefault.jpg' 
+    link: 'https://www.youtube.com/embed/L0l6SIIvRW0', 
+    thumbnail: 'https://img.youtube.com/vi/L0l6SIIvRW0/maxresdefault.jpg' 
   },
   { 
     client: 'Scratch Learn', 
     title: 'Short Video 12', 
-    link: 'https://www.youtube.com/embed/your_short_link12', 
-    thumbnail: 'https://img.youtube.com/vi/your_short_link12/maxresdefault.jpg' 
+    link: 'https://www.youtube.com/embed/eyej3zK_Fz0', 
+    thumbnail: 'https://img.youtube.com/vi/eyej3zK_Fz0/maxresdefault.jpg' 
   },
 ];
 
