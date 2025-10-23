@@ -10,6 +10,24 @@ import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 
 const shortFormVideos = [
+   { 
+    client: 'Focas',   
+    title: 'Short Video 1', 
+    link: 'https://www.youtube.com/embed/-_qW-CYaJSs', 
+    thumbnail: 'https://img.youtube.com/vi/-_qW-CYaJSs/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Focas',   
+    title: 'Short Video 2', 
+    link: 'https://www.youtube.com/embed/HhFQOmu5UBM', 
+    thumbnail: 'https://img.youtube.com/vi/HhFQOmu5UBM/maxresdefault.jpg' 
+  },
+  { 
+    client: 'Santu',   
+    title: 'Short Video 4', 
+    link: 'https://www.youtube.com/embed/0UOaIE39fQY', 
+    thumbnail: 'https://img.youtube.com/vi/0UOaIE39fQY/maxresdefault.jpg' 
+  },
   { 
     client: 'Scratch Learn',   
     title: 'Short Video 1', 
