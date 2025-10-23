@@ -22,11 +22,11 @@ const shortFormVideos = [
     link: 'https://www.youtube.com/embed/HhFQOmu5UBM', 
     thumbnail: 'https://img.youtube.com/vi/HhFQOmu5UBM/maxresdefault.jpg' 
   },
-  { 
+{ 
     client: 'Santu',   
-    title: 'Short Video 4', 
-    link: 'https://www.youtube.com/embed/0UOaIE39fQY', 
-    thumbnail: 'https://img.youtube.com/vi/0UOaIE39fQY/maxresdefault.jpg' 
+    title: 'Short Video 3', 
+    link: 'https://www.youtube.com/embed/HYSrpkh-H4M', 
+    thumbnail: 'https://img.youtube.com/vi/HYSrpkh-H4M/maxresdefault.jpg' 
   },
   { 
     client: 'Scratch Learn',   
