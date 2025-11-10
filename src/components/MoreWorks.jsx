@@ -1,7 +1,32 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-// --- Note: All icon definitions have been removed as requested ---
+// --- Local Icon Definitions (Reintroduced FaRegPlayCircle) ---
+const Icon = ({ children, className = '', style }) => (
+    <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="24" height="24" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        className={className} 
+        style={style}
+    >
+        {children}
+    </svg>
+);
+
+const FaRegPlayCircle = ({ className = '', style }) => (
+    <Icon className={className} style={style}><circle cx="12" cy="12" r="10" /><polygon points="10 8 16 12 10 16 10 8" /></Icon>
+);
+
+// Note: Other unused icons (FaInstagram, FaLinkedin, etc.) are omitted for brevity in this response, 
+// but you should keep them or remove them based on where else they are used in your actual project.
+// The main component no longer uses them.
+
 
 // --- Custom CountUp Component (Replaced react-countup) ---
 const CustomCountUp = ({ end, duration = 3, suffix = '' }) => {
@@ -53,11 +78,9 @@ const CustomCountUp = ({ end, duration = 3, suffix = '' }) => {
 
 // --- Configuration & Explicit Video Data ---
 
-// UPDATED PRIMARY COLOR
 const PRIMARY_COLOR = '#0f9cf8';
 const SECONDARY_TEXT_COLOR = 'rgb(147 197 253)'; // blue-300 equivalent
 
-// Mock helper to create placeholder videos with correct structure for missing data
 const createMockVideo = (client, title, isVertical) => {
     const mockId = title.replace(/\s/g, '').toLowerCase() + Math.floor(Math.random() * 999);
     const placeholderSize = isVertical ? '300x533' : '533x300';
@@ -96,7 +119,6 @@ const longFormVideosData = [
     { client: 'Beardo', title: 'Long Video', link: 'https://www.youtube.com/embed/ta5uEqzhTBo', thumbnail: 'https://img.youtube.com/vi/ta5uEqzhTBo/maxresdefault.jpg' },
 ];
 
-// --- 1. Motion Design Videos (9:16 Vertical) ---
 const motionDesignVideos = [
     { ...createMockVideo('Design Hub', 'Motion 01', true) },
     { ...createMockVideo('Creative Studio', 'Motion 02', true) },
@@ -104,7 +126,6 @@ const motionDesignVideos = [
     { ...createMockVideo('Tech Innovate', 'Motion 04', true) },
 ];
 
-// --- 2. Short Form Content (9:16 Vertical) ---
 const shortFormContentVideos = [
     { ...shortFormVideosData[0], title: 'Short 01' },
     { ...shortFormVideosData[1], title: 'Short 02' },
@@ -116,7 +137,6 @@ const shortFormContentVideos = [
     { ...shortFormVideosData[7], title: 'Short 08' },
 ];
 
-// --- 3. Corporate/Product Videos (16:9 Horizontal) ---
 const corporateProductVideos = [
     { ...longFormVideosData[0], title: 'Corporate 01' },
     { ...longFormVideosData[1], title: 'Corporate 02' },
@@ -124,7 +144,6 @@ const corporateProductVideos = [
     { ...createMockVideo('Tech Startup', 'Corporate 04', false) },
 ];
 
-// --- 4. Doctor Videos (9:16 Vertical) ---
 const doctorVideos = [
     { ...shortFormVideosData[12], title: 'Doctor 01', client: 'Dr. Balaji' },
     { ...createMockVideo('Health Clinic', 'Doctor 02', true) },
@@ -132,7 +151,6 @@ const doctorVideos = [
     { ...createMockVideo('Dental Care', 'Doctor 04', true) },
 ];
 
-// --- 5. YouTube Videos (16:9 Horizontal) ---
 const youtubeVideos = [
     { ...longFormVideosData[3], title: 'YouTube 01' },
     { ...longFormVideosData[4], title: 'YouTube 02' },
@@ -156,7 +174,7 @@ const VideoCard = ({ video, playingIndex, setPlayingIndex, id, isVertical }) => 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ type: 'spring', stiffness: 100, damping: 20 }} // Added motion transition for better feel
+            transition={{ type: 'spring', stiffness: 100, damping: 20 }}
             className={`relative group ${ratioClass} rounded-xl shadow-2xl overflow-hidden cursor-pointer bg-gray-800 transform hover:scale-[1.02] transition-transform duration-300`}
         >
             {isPlaying ? (
@@ -174,16 +192,13 @@ const VideoCard = ({ video, playingIndex, setPlayingIndex, id, isVertical }) => 
                         src={video.thumbnail}
                         alt={video.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        // Fallback image in case the real link or mock link fails
                         onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/533x300/1f2937/FFFFFF?text=Video+Loading+Error'; }}
                     />
                     <div
                         className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-4"
                     >
-                        {/* REPLACED ICON with text/div placeholder */}
-                        <div className="text-white text-4xl mb-2 font-bold transform group-hover:scale-110 transition-transform" style={{ color: PRIMARY_COLOR }}>
-                            PLAY
-                        </div>
+                        {/* REVERTED TO ICON */}
+                        <FaRegPlayCircle className="text-white text-6xl mb-2 transform group-hover:scale-110 transition-transform" style={{ color: PRIMARY_COLOR }} />
                         <div className="text-white text-sm font-semibold text-center">{video.title}</div>
                         <div className="text-white text-xs italic">{video.client}</div>
                     </div>
@@ -193,9 +208,8 @@ const VideoCard = ({ video, playingIndex, setPlayingIndex, id, isVertical }) => 
     );
 };
 
-const VideoSection = ({ title, description, videos, isVertical }) => { // Icon prop removed
+const VideoSection = ({ title, description, videos, isVertical }) => { 
     const [playingIndex, setPlayingIndex] = useState(null);
-    // Grid configuration for responsiveness
     const gridCols = isVertical ? 'sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'sm:grid-cols-2 md:grid-cols-3';
 
     return (
@@ -208,15 +222,14 @@ const VideoSection = ({ title, description, videos, isVertical }) => { // Icon p
             className="max-w-screen-xl mx-auto px-6 py-20"
         >
             {/* Centering the header group */}
-            <div className="flex flex-col items-center text-center mb-6"> {/* items-center for centering */}
-                {/* Icon removed */}
-                <h5 className="text-primary text-3xl md:text-4xl font-extrabold font-serif tracking-wide text-center"> {/* text-center for centering */}
+            <div className="flex flex-col items-center text-center mb-6"> 
+                <h5 className="text-primary text-3xl md:text-4xl font-extrabold font-serif tracking-wide text-center">
                     {title}
                 </h5>
             </div>
 
             {/* Description is now centered */}
-            <p className="text-center text-blue-300 italic text-md md:text-lg mb-12 max-w-2xl mx-auto"> {/* text-center and mx-auto for centering */}
+            <p className="text-center text-blue-300 italic text-md md:text-lg mb-12 max-w-2xl mx-auto"> 
                 {description}
             </p>
 
@@ -242,7 +255,7 @@ export default function MoreWorks() {
 
     return (
         <div className="min-h-screen bg-gray-900 text-white font-sans">
-            {/* Styling to define primary and secondary colors and icon sizes (Icon sizing classes are now redundant but kept the style block) */}
+            {/* Styling to define primary and secondary colors */}
             <style jsx global>{`
                 :root {
                     --color-primary: ${PRIMARY_COLOR};
@@ -252,7 +265,12 @@ export default function MoreWorks() {
                 .hover\\:text-primary:hover { color: var(--color-primary); }
                 .text-blue-300 { color: var(--color-blue-300); }
                 
-                /* Removed Icon Sizing classes */
+                /* Re-added Icon Sizing for the Play button icon */
+                svg {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .text-6xl { width: 4.5rem; height: 4.5rem; }
             `}</style>
 
             {/* Client Works Section Header - Titles and Quote are Centered */}
@@ -317,9 +335,6 @@ export default function MoreWorks() {
             {/* --- 5 CATEGORIES --- */}
             <section id="works-content">
 
-                {/* All VideoSections calls updated to remove icon prop */}
-                
-                {/* 1. Motion Design Videos (9:16 Vertical) */}
                 <VideoSection
                     title="Motion Design Videos"
                     description="Dynamic animations and graphic storytelling for high-impact visual communication."
@@ -327,7 +342,6 @@ export default function MoreWorks() {
                     isVertical={true}
                 />
 
-                {/* 2. Short Form Content (9:16 Vertical) */}
                 <VideoSection
                     title="Short Form Content"
                     description="Captivating vertical videos optimized for Reels, TikTok, and Shorts platforms."
@@ -335,7 +349,6 @@ export default function MoreWorks() {
                     isVertical={true}
                 />
 
-                {/* 3. Corporate/Product Videos (16:9 Horizontal) */}
                 <VideoSection
                     title="Corporate/Product Videos"
                     description="Polished, professional content for marketing, training, and brand storytelling."
@@ -343,7 +356,6 @@ export default function MoreWorks() {
                     isVertical={false}
                 />
 
-                {/* 4. Doctor Videos (9:16 Vertical) */}
                 <VideoSection
                     title="Doctor Videos"
                     description="Informative and engaging health content for medical professionals and clinics."
@@ -351,7 +363,6 @@ export default function MoreWorks() {
                     isVertical={true}
                 />
 
-                {/* 5. YouTube Videos (16:9 Horizontal) */}
                 <VideoSection
                     title="YouTube Videos"
                     description="High-quality, long-form content edited for optimal YouTube viewership and engagement."
