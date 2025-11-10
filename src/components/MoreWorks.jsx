@@ -353,7 +353,7 @@ export default function MoreWorks() {
                     <div className="flex flex-col items-start">
                         <h3 className="text-4xl md:text-5xl font-bold text-primary">
                             <CustomCountUp end={50} duration={3} suffix="+" />
-                        </b>
+                        </h3>
                         <p className="text-gray-300 mt-1">Clients Worked With</p>
                     </div>
 
@@ -434,7 +434,7 @@ export default function MoreWorks() {
                         <div className="lg:col-span-1 flex flex-col items-start">
                             <h3 className="text-5xl md:text-6xl font-extrabold text-white mb-4">
                                 Let’s <br/> Work <br/> Together 🚀
-                            </b>
+                            </h3>
                             <div className="flex justify-start gap-6 text-white text-3xl mt-6">
                                 <a
                                     href="https://instagram.com/imkv__"
