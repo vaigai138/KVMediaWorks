@@ -223,6 +223,7 @@ const VideoCard = ({ video, playingIndex, setPlayingIndex, id, isVertical }) => 
                     <div
                         className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-4"
                     >
+                        {/* Ensure primary color is visible on the play button */}
                         <FaRegPlayCircle className="text-white text-6xl mb-2 transform group-hover:scale-110 transition-transform" style={{ color: PRIMARY_COLOR }} />
                         <div className="text-white text-sm font-semibold text-center">{video.title}</div>
                         <div className="text-white text-xs italic">{video.client}</div>
@@ -245,17 +246,22 @@ const VideoSection = ({ title, icon: Icon, description, videos, isVertical }) =>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.7 }}
-            // Increased py to ensure consistent spacing between sections
             className="max-w-screen-xl mx-auto px-6 py-20" 
         >
-            <div className="flex flex-col items-center justify-center mb-4 text-center">
+            {/* CORRECTION: Center the header group using flex-col and text-center.
+                Removed the inline 'flex items-center' from the title container 
+                to allow the icon and multi-line title to stack correctly for central alignment.
+            */}
+            <div className="flex flex-col items-center text-center mb-6">
                 <Icon className="text-4xl mb-2" style={{ color: PRIMARY_COLOR }} />
-                <h5 className="text-white text-3xl md:text-4xl font-extrabold font-serif tracking-wide">
+                <h5 className="text-primary text-3xl md:text-4xl font-extrabold font-serif tracking-wide whitespace-nowrap">
+                    {/* The title is passed as a single string, fixing the display issue from the screenshot */}
                     {title}
                 </h5>
             </div>
-            {/* Added max-w-2xl mx-auto to constrain description width on large screens for better readability */}
-            <p className="text-center text-blue-300 italic text-md md:text-lg mb-10 max-w-2xl mx-auto">
+            
+            {/* Ensure description is centered and uses the correct text-blue-300 color */}
+            <p className="text-center text-blue-300 italic text-md md:text-lg mb-12 max-w-2xl mx-auto">
                 {description}
             </p>
 
@@ -311,10 +317,9 @@ export default function MoreWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                // Increased pt and added pb for better top and bottom separation
                 className="max-w-screen-xl mx-auto px-6 pt-20 pb-10" 
             >
-                {/* Primary text color applied here - ensures correct alignment */}
+                {/* Ensure the main header uses the requested styles and is centered */}
                 <h5 className="text-primary text-3xl md:text-5xl font-extrabold text-center pb-2 font-serif tracking-wide">
                     Client Works 🎬
                 </h5>
@@ -329,7 +334,6 @@ export default function MoreWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                // Adjusted py for better spacing
                 className="max-w-screen-xl mx-auto px-6 py-16" 
             >
                 {/* Responsive grid for stats */}
@@ -411,7 +415,6 @@ export default function MoreWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                // Adjusted py for a strong final section spacing
                 className="py-20 mt-10" 
             >
                 <div className="max-w-screen-md mx-auto text-center px-6">
@@ -424,7 +427,6 @@ export default function MoreWorks() {
                     </p>
 
                     {/* Responsive contact links */}
-                    {/* Used justify-center to ensure alignment */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
                         <a
                             href="mailto:vaigaivendhan138@gmail.com"
