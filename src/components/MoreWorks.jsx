@@ -126,10 +126,10 @@ const longFormVideosData = [
 
 const motionDesignVideos = [
     // Previously used createMockVideo (Vertical)
-    { client: 'Design Hub', title: 'Motion 01', link: 'https://www.youtube.com/embed/placeholder_md_1', thumbnail: 'https://img.youtube.com/vi/placeholder_md_1/maxresdefault.jpg' },
-    { client: 'Creative Studio', title: 'Motion 02', link: 'https://www.youtube.com/embed/placeholder_md_2', thumbnail: 'https://img.youtube.com/vi/placeholder_md_2/maxresdefault.jpg' },
-    { client: 'Brand X', title: 'Motion 03', link: 'https://www.youtube.com/embed/placeholder_md_3', thumbnail: 'https://img.youtube.com/vi/placeholder_md_3/maxresdefault.jpg' },
-    { client: 'Tech Innovate', title: 'Motion 04', link: 'https://www.youtube.com/embed/placeholder_md_4', thumbnail: 'https://img.youtube.com/vi/placeholder_md_4/maxresdefault.jpg' },
+    { client: 'Design Hub', title: 'Motion 01', link: 'https://www.youtube.com/embed/h58tmYj7GWI', thumbnail: 'https://img.youtube.com/vi/h58tmYj7GWI/maxresdefault.jpg' },
+    { client: 'Creative Studio', title: 'Motion 02', link: 'https://www.youtube.com/embed/acnP43pd6RY', thumbnail: 'https://img.youtube.com/vi/acnP43pd6RY/maxresdefault.jpg' },
+    { client: 'Brand X', title: 'Motion 03', link: 'https://www.youtube.com/embed/PBeTnvtkGuA', thumbnail: 'https://img.youtube.com/vi/PBeTnvtkGuA/maxresdefault.jpg' },
+    { client: 'Tech Innovate', title: 'Motion 04', link: 'https://www.youtube.com/embed/czZF2SLShXI', thumbnail: 'https://img.youtube.com/vi/czZF2SLShXI/maxresdefault.jpg' },
 ];
 
 const shortFormContentVideos = [
