@@ -92,6 +92,8 @@ const createMockVideo = (client, title, isVertical) => {
     };
 };
 
+// Note: createMockVideo is removed in the full file as it is no longer needed.
+
 const shortFormVideosData = [
     { client: 'Focas', title: 'Short Video 1', link: 'https://www.youtube.com/embed/-_qW-CYaJSs', thumbnail: 'https://img.youtube.com/vi/-_qW-CYaJSs/maxresdefault.jpg' },
     { client: 'Focas', title: 'Short Video 2', link: 'https://www.youtube.com/embed/HhFQOmu5UBM', thumbnail: 'https://img.youtube.com/vi/HhFQOmu5UBM/maxresdefault.jpg' },
@@ -119,45 +121,55 @@ const longFormVideosData = [
     { client: 'Beardo', title: 'Long Video', link: 'https://www.youtube.com/embed/ta5uEqzhTBo', thumbnail: 'https://img.youtube.com/vi/ta5uEqzhTBo/maxresdefault.jpg' },
 ];
 
+
+// --- NEW EXPLICIT VIDEO ARRAYS ---
+
 const motionDesignVideos = [
-    { ...createMockVideo('Design Hub', 'Motion 01', true) },
-    { ...createMockVideo('Creative Studio', 'Motion 02', true) },
-    { ...createMockVideo('Brand X', 'Motion 03', true) },
-    { ...createMockVideo('Tech Innovate', 'Motion 04', true) },
+    // Previously used createMockVideo (Vertical)
+    { client: 'Design Hub', title: 'Motion 01', link: 'https://www.youtube.com/embed/placeholder_md_1', thumbnail: 'https://img.youtube.com/vi/placeholder_md_1/maxresdefault.jpg' },
+    { client: 'Creative Studio', title: 'Motion 02', link: 'https://www.youtube.com/embed/placeholder_md_2', thumbnail: 'https://img.youtube.com/vi/placeholder_md_2/maxresdefault.jpg' },
+    { client: 'Brand X', title: 'Motion 03', link: 'https://www.youtube.com/embed/placeholder_md_3', thumbnail: 'https://img.youtube.com/vi/placeholder_md_3/maxresdefault.jpg' },
+    { client: 'Tech Innovate', title: 'Motion 04', link: 'https://www.youtube.com/embed/placeholder_md_4', thumbnail: 'https://img.youtube.com/vi/placeholder_md_4/maxresdefault.jpg' },
 ];
 
 const shortFormContentVideos = [
-    { ...shortFormVideosData[0], title: 'Short 01' },
-    { ...shortFormVideosData[1], title: 'Short 02' },
-    { ...shortFormVideosData[2], title: 'Short 03' },
-    { ...shortFormVideosData[3], title: 'Short 04' },
-    { ...shortFormVideosData[4], title: 'Short 05' },
-    { ...shortFormVideosData[5], title: 'Short 06' },
-    { ...shortFormVideosData[6], title: 'Short 07' },
-    { ...shortFormVideosData[7], title: 'Short 08' },
+    // Explicitly mapping from shortFormVideosData
+    { client: 'Focas', title: 'Short 01', link: 'https://www.youtube.com/embed/-_qW-CYaJSs', thumbnail: 'https://img.youtube.com/vi/-_qW-CYaJSs/maxresdefault.jpg' },
+    { client: 'Focas', title: 'Short 02', link: 'https://www.youtube.com/embed/HhFQOmu5UBM', thumbnail: 'https://img.youtube.com/vi/HhFQOmu5UBM/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short 03', link: 'https://www.youtube.com/embed/HYSrpkh-H4M', thumbnail: 'https://img.youtube.com/vi/HYSrpkh-H4M/maxresdefault.jpg' },
+    { client: 'Scratch Learn', title: 'Short 04', link: 'https://www.youtube.com/embed/lXWFcj6dhOs', thumbnail: 'https://img.youtube.com/vi/lXWFcj6dhOs/maxresdefault.jpg' },
+    { client: 'Santu In UK', title: 'Short 05', link: 'https://www.youtube.com/embed/iJyzJXLGp9E', thumbnail: 'https://img.youtube.com/vi/iJyzJXLGp9E/maxresdefault.jpg' },
+    { client: 'Santu In UK', title: 'Short 06', link: 'https://www.youtube.com/embed/SFpCJlJHPG8', thumbnail: 'https://img.youtube.com/vi/SFpCJlJHPG8/maxresdefault.jpg' },
+    { client: 'Santu In UK', title: 'Short 07', link: 'https://www.youtube.com/embed/sRKKLyJdM1A', thumbnail: 'https://img.youtube.com/vi/sRKKLyJdM1A/maxresdefault.jpg' },
+    { client: 'Spyka', title: 'Short 08', link: 'https://www.youtube.com/embed/KN5E0ZKDaUU', thumbnail: 'https://img.youtube.com/vi/KN5E0ZKDaUU/maxresdefault.jpg' },
 ];
 
 const corporateProductVideos = [
-    { ...longFormVideosData[0], title: 'Corporate 01' },
-    { ...longFormVideosData[1], title: 'Corporate 02' },
-    { ...longFormVideosData[2], title: 'Corporate 03' },
-    { ...createMockVideo('Tech Startup', 'Corporate 04', false) },
+    // Explicitly mapping from longFormVideosData (Indices 0-2)
+    { client: 'Santu UK', title: 'Corporate 01', link: 'https://www.youtube.com/embed/Ijhy7m2sDeA', thumbnail: 'https://img.youtube.com/vi/Ijhy7m2sDeA/maxresdefault.jpg' },
+    { client: 'Focas', title: 'Corporate 02', link: 'https://www.youtube.com/embed/5D31g4eMFbA', thumbnail: 'https://img.youtube.com/vi/5D31g4eMFbA/maxresdefault.jpg' },
+    { client: 'Santu UK', title: 'Corporate 03', link: 'https://www.youtube.com/embed/gYVne66AaxE', thumbnail: 'https://img.youtube.com/vi/gYVne66AaxE/maxresdefault.jpg' },
+    // Previously used createMockVideo (Horizontal)
+    { client: 'Tech Startup', title: 'Corporate 04', link: 'https://www.youtube.com/embed/placeholder_cp_4', thumbnail: 'https://img.youtube.com/vi/placeholder_cp_4/maxresdefault.jpg' },
 ];
 
 const doctorVideos = [
-    { ...shortFormVideosData[12], title: 'Doctor 01', client: 'Dr. Balaji' },
-    { ...createMockVideo('Health Clinic', 'Doctor 02', true) },
-    { ...createMockVideo('Pediatrician', 'Doctor 03', true) },
-    { ...createMockVideo('Dental Care', 'Doctor 04', true) },
+    // Explicitly mapping from shortFormVideosData (Index 12)
+    { client: 'Dr. Balaji', title: 'Doctor 01', link: 'https://www.youtube.com/embed/vkmUe7dujs8', thumbnail: 'https://img.youtube.com/vi/vkmUe7dujs8/maxresdefault.jpg' },
+    // Previously used createMockVideo (Vertical)
+    { client: 'Health Clinic', title: 'Doctor 02', link: 'https://www.youtube.com/embed/placeholder_d_2', thumbnail: 'https://img.youtube.com/vi/placeholder_d_2/maxresdefault.jpg' },
+    { client: 'Pediatrician', title: 'Doctor 03', link: 'https://www.youtube.com/embed/placeholder_d_3', thumbnail: 'https://img.youtube.com/vi/placeholder_d_3/maxresdefault.jpg' },
+    { client: 'Dental Care', title: 'Doctor 04', link: 'https://www.youtube.com/embed/placeholder_d_4', thumbnail: 'https://img.youtube.com/vi/placeholder_d_4/maxresdefault.jpg' },
 ];
 
 const youtubeVideos = [
-    { ...longFormVideosData[3], title: 'YouTube 01' },
-    { ...longFormVideosData[4], title: 'YouTube 02' },
-    { ...longFormVideosData[5], title: 'YouTube 03' },
-    { ...createMockVideo('Gaming Channel', 'YouTube 04', false) },
+    // Explicitly mapping from longFormVideosData (Indices 3-5)
+    { client: 'Beardo', title: 'YouTube 01', link: 'https://www.youtube.com/embed/9KICweMciK4', thumbnail: 'https://img.youtube.com/vi/9KICweMciK4/maxresdefault.jpg' },
+    { client: 'Beardo', title: 'YouTube 02', link: 'https://www.youtube.com/embed/_Cao_r2swWQ', thumbnail: 'https://img.youtube.com/vi/_Cao_r2swWQ/maxresdefault.jpg' },
+    { client: 'Beardo', title: 'YouTube 03', link: 'https://www.youtube.com/embed/ta5uEqzhTBo', thumbnail: 'https://img.youtube.com/vi/ta5uEqzhTBo/maxresdefault.jpg' },
+    // Previously used createMockVideo (Horizontal)
+    { client: 'Gaming Channel', title: 'YouTube 04', link: 'https://www.youtube.com/embed/placeholder_yt_4', thumbnail: 'https://img.youtube.com/vi/placeholder_yt_4/maxresdefault.jpg' },
 ];
-
 // --- Reusable Sub-Components ---
 
 const VideoCard = ({ video, playingIndex, setPlayingIndex, id, isVertical }) => {
