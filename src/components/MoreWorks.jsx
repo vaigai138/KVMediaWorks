@@ -319,18 +319,18 @@ export default function MoreWorks() {
                 {/* FIX: Use flex and grid to achieve the left-aligned, multi-column look */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Column 1: Main Title */}
-                    <div className="lg:col-span-1">
-                        {/* Applying the requested style exactly, but removing 'text-center' to align left */}
-                        <h5 className="text-primary text-3xl md:text-5xl font-extrabold pb-2 font-serif tracking-wide">
-                            Client <br className="hidden lg:block"/>Works 🎬
-                        </h5>
-                    </div>
-                    {/* Column 2: Motto (This will occupy the remaining space) */}
-                    <div className="lg:col-span-2 flex items-start pt-2">
-                        <p className="text-blue-300 italic text-md md:text-lg">
-                            “Bringing stories to life, one frame at a time.”
-                        </p>
-                    </div>
+                   <h5 className="text-primary text-3xl md:text-5xl font-extrabold text-center pb-2 font-serif tracking-wide">
+
+          Client Works 🎬
+
+        </h5>
+
+        <p className="text-center text-blue-300 italic text-md md:text-lg">
+
+          “Bringing stories to life, one frame at a time.”
+
+        </p>
+
                 </div>
             </motion.section>
 
