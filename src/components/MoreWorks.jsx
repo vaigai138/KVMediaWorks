@@ -245,16 +245,17 @@ const VideoSection = ({ title, icon: Icon, description, videos, isVertical }) =>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.7 }}
-            className="max-w-screen-xl mx-auto px-6 py-16"
+            // Increased py to ensure consistent spacing between sections
+            className="max-w-screen-xl mx-auto px-6 py-20" 
         >
-            <div className="flex items-center justify-center mb-4">
-                <Icon className="text-4xl mr-3" style={{ color: PRIMARY_COLOR }} />
+            <div className="flex flex-col items-center justify-center mb-4 text-center">
+                <Icon className="text-4xl mb-2" style={{ color: PRIMARY_COLOR }} />
                 <h5 className="text-white text-3xl md:text-4xl font-extrabold font-serif tracking-wide">
                     {title}
                 </h5>
             </div>
-            {/* UPDATED: Ensuring consistent text-blue-300 color for description */}
-            <p className="text-center text-blue-300 italic text-md md:text-lg mb-10">
+            {/* Added max-w-2xl mx-auto to constrain description width on large screens for better readability */}
+            <p className="text-center text-blue-300 italic text-md md:text-lg mb-10 max-w-2xl mx-auto">
                 {description}
             </p>
 
@@ -287,7 +288,7 @@ export default function MoreWorks() {
                     --color-blue-300: ${SECONDARY_TEXT_COLOR};
                 }
                 .text-primary { color: var(--color-primary); }
-                .hover\:text-primary:hover { color: var(--color-primary); }
+                .hover\\:text-primary:hover { color: var(--color-primary); }
                 .text-blue-300 { color: var(--color-blue-300); }
                 
                 /* Icon Sizing for Tailwind utility classes - essential for responsiveness */
@@ -310,9 +311,10 @@ export default function MoreWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="max-w-screen-xl mx-auto px-6 pt-6"
+                // Increased pt and added pb for better top and bottom separation
+                className="max-w-screen-xl mx-auto px-6 pt-20 pb-10" 
             >
-                {/* Primary text color applied here */}
+                {/* Primary text color applied here - ensures correct alignment */}
                 <h5 className="text-primary text-3xl md:text-5xl font-extrabold text-center pb-2 font-serif tracking-wide">
                     Client Works 🎬
                 </h5>
@@ -327,7 +329,8 @@ export default function MoreWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="max-w-screen-xl mx-auto px-6 py-12"
+                // Adjusted py for better spacing
+                className="max-w-screen-xl mx-auto px-6 py-16" 
             >
                 {/* Responsive grid for stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
@@ -408,7 +411,8 @@ export default function MoreWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="py-16 mt-10"
+                // Adjusted py for a strong final section spacing
+                className="py-20 mt-10" 
             >
                 <div className="max-w-screen-md mx-auto text-center px-6">
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -420,6 +424,7 @@ export default function MoreWorks() {
                     </p>
 
                     {/* Responsive contact links */}
+                    {/* Used justify-center to ensure alignment */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
                         <a
                             href="mailto:vaigaivendhan138@gmail.com"
