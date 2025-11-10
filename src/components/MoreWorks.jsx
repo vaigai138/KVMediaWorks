@@ -248,20 +248,17 @@ const VideoSection = ({ title, icon: Icon, description, videos, isVertical }) =>
             transition={{ duration: 0.7 }}
             className="max-w-screen-xl mx-auto px-6 py-20" 
         >
-            {/* CORRECTION: Center the header group using flex-col and text-center.
-                Removed the inline 'flex items-center' from the title container 
-                to allow the icon and multi-line title to stack correctly for central alignment.
-            */}
-            <div className="flex flex-col items-center text-center mb-6">
+            {/* Left-aligning the header group */}
+            <div className="flex flex-col items-start text-left mb-6">
                 <Icon className="text-4xl mb-2" style={{ color: PRIMARY_COLOR }} />
-                <h5 className="text-primary text-3xl md:text-4xl font-extrabold font-serif tracking-wide whitespace-nowrap">
-                    {/* The title is passed as a single string, fixing the display issue from the screenshot */}
+                {/* Applied text-left to override the previous center alignment that caused issues */}
+                <h5 className="text-primary text-3xl md:text-4xl font-extrabold font-serif tracking-wide text-left">
                     {title}
                 </h5>
             </div>
             
-            {/* Ensure description is centered and uses the correct text-blue-300 color */}
-            <p className="text-center text-blue-300 italic text-md md:text-lg mb-12 max-w-2xl mx-auto">
+            {/* Description is now left-aligned */}
+            <p className="text-left text-blue-300 italic text-md md:text-lg mb-12 max-w-2xl">
                 {description}
             </p>
 
@@ -319,13 +316,22 @@ export default function MoreWorks() {
                 transition={{ duration: 0.7 }}
                 className="max-w-screen-xl mx-auto px-6 pt-20 pb-10" 
             >
-                {/* Ensure the main header uses the requested styles and is centered */}
-                <h5 className="text-primary text-3xl md:text-5xl font-extrabold text-center pb-2 font-serif tracking-wide">
-                    Client Works 🎬
-                </h5>
-                <p className="text-center text-blue-300 italic text-md md:text-lg">
-                    “Bringing stories to life, one frame at a time.”
-                </p>
+                {/* FIX: Use flex and grid to achieve the left-aligned, multi-column look */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Column 1: Main Title */}
+                    <div className="lg:col-span-1">
+                        {/* Applying the requested style exactly, but removing 'text-center' to align left */}
+                        <h5 className="text-primary text-3xl md:text-5xl font-extrabold pb-2 font-serif tracking-wide">
+                            Client <br className="hidden lg:block"/>Works 🎬
+                        </h5>
+                    </div>
+                    {/* Column 2: Motto (This will occupy the remaining space) */}
+                    <div className="lg:col-span-2 flex items-start pt-2">
+                        <p className="text-blue-300 italic text-md md:text-lg">
+                            “Bringing stories to life, one frame at a time.”
+                        </p>
+                    </div>
+                </div>
             </motion.section>
 
             {/* Stats Section */}
@@ -336,25 +342,31 @@ export default function MoreWorks() {
                 transition={{ duration: 0.7 }}
                 className="max-w-screen-xl mx-auto px-6 py-16" 
             >
-                {/* Responsive grid for stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                    <div>
+                {/* FIX: Restructured for left-aligned, multi-column stats */}
+                <div className="flex flex-col md:flex-row md:justify-start gap-12 sm:gap-16">
+                    
+                    {/* Stat 1: Videos Edited */}
+                    <div className="flex flex-col items-start">
                         <h3 className="text-4xl md:text-5xl font-bold text-primary">
                             <CustomCountUp end={450} duration={3} suffix="+" />
                         </h3>
-                        <p className="text-gray-300 mt-2">Videos Edited</p>
+                        <p className="text-gray-300 mt-1">Videos Edited</p>
                     </div>
-                    <div>
+
+                    {/* Stat 2: Clients Worked With */}
+                    <div className="flex flex-col items-start">
                         <h3 className="text-4xl md:text-5xl font-bold text-primary">
                             <CustomCountUp end={50} duration={3} suffix="+" />
                         </h3>
-                        <p className="text-gray-300 mt-2">Clients Worked With</p>
+                        <p className="text-gray-300 mt-1">Clients Worked With</p>
                     </div>
-                    <div>
+
+                    {/* Stat 3: Years Experience */}
+                    <div className="flex flex-col items-start">
                         <h3 className="text-4xl md:text-5xl font-bold text-primary">
                             <CustomCountUp end={3} duration={3} suffix="+" />
                         </h3>
-                        <p className="text-gray-300 mt-2">Years Experience</p>
+                        <p className="text-gray-300 mt-1">Years Experience</p>
                     </div>
                 </div>
             </motion.section>
@@ -362,6 +374,7 @@ export default function MoreWorks() {
             {/* --- 5 CATEGORIES --- */}
             <section id="works-content">
 
+                {/* All VideoSections use the new left-aligned structure */}
                 {/* 1. Motion Design Videos (9:16 Vertical) */}
                 <VideoSection
                     title="Motion Design Videos"
@@ -417,48 +430,57 @@ export default function MoreWorks() {
                 transition={{ duration: 0.7 }}
                 className="py-20 mt-10" 
             >
-                <div className="max-w-screen-md mx-auto text-center px-6">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Let’s Work Together 🚀
-                    </h3>
-                    <p className="text-gray-300 mb-8">
-                        Have a project in mind? Reach out and let’s bring your vision to
-                        life.
-                    </p>
+                <div className="max-w-screen-xl mx-auto px-6">
+                    {/* FIX: Use grid for the contact section to left-align the title and contact details */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        
+                        {/* Left Column: Title & Socials */}
+                        <div className="lg:col-span-1 flex flex-col items-start">
+                            <h3 className="text-5xl md:text-6xl font-extrabold text-white mb-4">
+                                Let’s <br/> Work <br/> Together 🚀
+                            </h3>
+                            <div className="flex justify-start gap-6 text-white text-3xl mt-6">
+                                <a
+                                    href="https://instagram.com/imkv__"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-pink-400 transition"
+                                >
+                                    <FaInstagram className="text-3xl" />
+                                </a>
+                                <a
+                                    href="http://linkedin.com/in/vaigai-vendhan-9b142b258"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-blue-400 transition"
+                                >
+                                    <FaLinkedin className="text-3xl" />
+                                </a>
+                            </div>
+                        </div>
 
-                    {/* Responsive contact links */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
-                        <a
-                            href="mailto:vaigaivendhan138@gmail.com"
-                            className="flex items-center gap-2 text-white hover:text-primary transition"
-                        >
-                            <FaEnvelope className="text-xl" /> vaigaivendhan138@gmail.com
-                        </a>
-                        <a
-                            href="tel:+917604895101"
-                            className="flex items-center gap-2 text-white hover:text-primary transition"
-                        >
-                            <FaPhone className="text-xl" /> +91 7604895101
-                        </a>
-                    </div>
+                        {/* Right Column: Message and Contact Details */}
+                        <div className="lg:col-span-1 pt-4 lg:pt-8 flex flex-col items-start">
+                            <p className="text-gray-300 text-lg mb-8">
+                                Have a project in mind? Reach out and let’s bring your vision to life.
+                            </p>
 
-                    <div className="flex justify-center gap-6 text-white text-2xl">
-                        <a
-                            href="https://instagram.com/imkv__"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-pink-400 transition"
-                        >
-                            <FaInstagram className="text-2xl" />
-                        </a>
-                        <a
-                            href="http://linkedin.com/in/vaigai-vendhan-9b142b258"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-blue-400 transition"
-                        >
-                            <FaLinkedin className="text-2xl" />
-                        </a>
+                            {/* Contact links stack vertically on mobile, horizontally on desktop */}
+                            <div className="flex flex-col items-start gap-4">
+                                <a
+                                    href="mailto:vaigaivendhan138@gmail.com"
+                                    className="flex items-center gap-2 text-white hover:text-primary transition"
+                                >
+                                    <FaEnvelope className="text-xl" /> vaigaivendhan138@gmail.com
+                                </a>
+                                <a
+                                    href="tel:+917604895101"
+                                    className="flex items-center gap-2 text-white hover:text-primary transition"
+                                >
+                                    <FaPhone className="text-xl" /> +91 7604895101
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </motion.section>
