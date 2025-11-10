@@ -126,49 +126,49 @@ const longFormVideosData = [
 
 const motionDesignVideos = [
     // Previously used createMockVideo (Vertical)
-    { client: 'Design Hub', title: 'Motion 01', link: 'https://www.youtube.com/embed/h58tmYj7GWI', thumbnail: 'https://img.youtube.com/vi/h58tmYj7GWI/maxresdefault.jpg' },
-    { client: 'Creative Studio', title: 'Motion 02', link: 'https://www.youtube.com/embed/acnP43pd6RY', thumbnail: 'https://img.youtube.com/vi/acnP43pd6RY/maxresdefault.jpg' },
-    { client: 'Brand X', title: 'Motion 03', link: 'https://www.youtube.com/embed/PBeTnvtkGuA', thumbnail: 'https://img.youtube.com/vi/PBeTnvtkGuA/maxresdefault.jpg' },
-    { client: 'Tech Innovate', title: 'Motion 04', link: 'https://www.youtube.com/embed/czZF2SLShXI', thumbnail: 'https://img.youtube.com/vi/czZF2SLShXI/maxresdefault.jpg' },
+    { client: 'KV Media Works', title: 'Motion 01', link: 'https://www.youtube.com/embed/h58tmYj7GWI', thumbnail: 'https://img.youtube.com/vi/h58tmYj7GWI/maxresdefault.jpg' },
+    { client: 'KV Media Works', title: 'Motion 02', link: 'https://www.youtube.com/embed/acnP43pd6RY', thumbnail: 'https://img.youtube.com/vi/acnP43pd6RY/maxresdefault.jpg' },
+    { client: 'KV Media Works', title: 'Motion 03', link: 'https://www.youtube.com/embed/PBeTnvtkGuA', thumbnail: 'https://img.youtube.com/vi/PBeTnvtkGuA/maxresdefault.jpg' },
+    { client: 'KV Media Works', title: 'Motion 04', link: 'https://www.youtube.com/embed/czZF2SLShXI', thumbnail: 'https://img.youtube.com/vi/czZF2SLShXI/maxresdefault.jpg' },
 ];
 
 const shortFormContentVideos = [
     // Explicitly mapping from shortFormVideosData
     { client: 'Focas', title: 'Short 01', link: 'https://www.youtube.com/embed/-_qW-CYaJSs', thumbnail: 'https://img.youtube.com/vi/-_qW-CYaJSs/maxresdefault.jpg' },
     { client: 'Focas', title: 'Short 02', link: 'https://www.youtube.com/embed/HhFQOmu5UBM', thumbnail: 'https://img.youtube.com/vi/HhFQOmu5UBM/maxresdefault.jpg' },
-    { client: 'Santu', title: 'Short 03', link: 'https://www.youtube.com/embed/HYSrpkh-H4M', thumbnail: 'https://img.youtube.com/vi/HYSrpkh-H4M/maxresdefault.jpg' },
+    { client: 'Scratch Learn', title: 'Short 03', link: 'https://www.youtube.com/embed/eyej3zK_Fz0', thumbnail: 'https://img.youtube.com/vi/eyej3zK_Fz0/maxresdefault.jpg' },
     { client: 'Scratch Learn', title: 'Short 04', link: 'https://www.youtube.com/embed/lXWFcj6dhOs', thumbnail: 'https://img.youtube.com/vi/lXWFcj6dhOs/maxresdefault.jpg' },
     { client: 'Santu In UK', title: 'Short 05', link: 'https://www.youtube.com/embed/iJyzJXLGp9E', thumbnail: 'https://img.youtube.com/vi/iJyzJXLGp9E/maxresdefault.jpg' },
     { client: 'Santu In UK', title: 'Short 06', link: 'https://www.youtube.com/embed/SFpCJlJHPG8', thumbnail: 'https://img.youtube.com/vi/SFpCJlJHPG8/maxresdefault.jpg' },
-    { client: 'Santu In UK', title: 'Short 07', link: 'https://www.youtube.com/embed/sRKKLyJdM1A', thumbnail: 'https://img.youtube.com/vi/sRKKLyJdM1A/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short 07', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
     { client: 'Spyka', title: 'Short 08', link: 'https://www.youtube.com/embed/KN5E0ZKDaUU', thumbnail: 'https://img.youtube.com/vi/KN5E0ZKDaUU/maxresdefault.jpg' },
 ];
 
 const corporateProductVideos = [
     // Explicitly mapping from longFormVideosData (Indices 0-2)
-    { client: 'Santu UK', title: 'Corporate 01', link: 'https://www.youtube.com/embed/Ijhy7m2sDeA', thumbnail: 'https://img.youtube.com/vi/Ijhy7m2sDeA/maxresdefault.jpg' },
-    { client: 'Focas', title: 'Corporate 02', link: 'https://www.youtube.com/embed/5D31g4eMFbA', thumbnail: 'https://img.youtube.com/vi/5D31g4eMFbA/maxresdefault.jpg' },
-    { client: 'Santu UK', title: 'Corporate 03', link: 'https://www.youtube.com/embed/gYVne66AaxE', thumbnail: 'https://img.youtube.com/vi/gYVne66AaxE/maxresdefault.jpg' },
+    { client: 'Botfolio', title: 'Corporate 01', link: 'https://www.youtube.com/embed/HQApd4rhpNw', thumbnail: 'https://img.youtube.com/vi/HQApd4rhpNw/maxresdefault.jpg' },
+    { client: 'CookIT', title: 'Corporate 02', link: 'https://www.youtube.com/embed/vuUDexJgxls', thumbnail: 'https://img.youtube.com/vi/vuUDexJgxls/maxresdefault.jpg' },
+    { client: 'Focas', title: 'Corporate 03', link: 'https://www.youtube.com/embed/5D31g4eMFbA', thumbnail: 'https://img.youtube.com/vi/5D31g4eMFbA/maxresdefault.jpg' },
     // Previously used createMockVideo (Horizontal)
-    { client: 'Tech Startup', title: 'Corporate 04', link: 'https://www.youtube.com/embed/placeholder_cp_4', thumbnail: 'https://img.youtube.com/vi/placeholder_cp_4/maxresdefault.jpg' },
+    { client: 'KV Media Works', title: 'Corporate 04', link: 'https://www.youtube.com/embed/fnbgrwnsSgY', thumbnail: 'https://img.youtube.com/vi/fnbgrwnsSgY/maxresdefault.jpg' },
 ];
 
 const doctorVideos = [
     // Explicitly mapping from shortFormVideosData (Index 12)
     { client: 'Dr. Balaji', title: 'Doctor 01', link: 'https://www.youtube.com/embed/vkmUe7dujs8', thumbnail: 'https://img.youtube.com/vi/vkmUe7dujs8/maxresdefault.jpg' },
     // Previously used createMockVideo (Vertical)
-    { client: 'Health Clinic', title: 'Doctor 02', link: 'https://www.youtube.com/embed/placeholder_d_2', thumbnail: 'https://img.youtube.com/vi/placeholder_d_2/maxresdefault.jpg' },
-    { client: 'Pediatrician', title: 'Doctor 03', link: 'https://www.youtube.com/embed/placeholder_d_3', thumbnail: 'https://img.youtube.com/vi/placeholder_d_3/maxresdefault.jpg' },
-    { client: 'Dental Care', title: 'Doctor 04', link: 'https://www.youtube.com/embed/placeholder_d_4', thumbnail: 'https://img.youtube.com/vi/placeholder_d_4/maxresdefault.jpg' },
+    { client: 'Dr.Balaji', title: 'Doctor 02', link: 'https://www.youtube.com/embed/3Hxsrtt7WYw', thumbnail: 'https://img.youtube.com/vi/3Hxsrtt7WYw/maxresdefault.jpg' },
+    { client: 'Dr.Ankitha', title: 'Doctor 03', link: 'https://www.youtube.com/embed/tC-kzU13EAQ', thumbnail: 'https://img.youtube.com/vi/tC-kzU13EAQ/maxresdefault.jpg' },
+    { client: 'IVF', title: 'Doctor 04', link: 'https://www.youtube.com/embed/l_8zUejsRSM', thumbnail: 'https://img.youtube.com/vi/l_8zUejsRSM/maxresdefault.jpg' },
 ];
 
 const youtubeVideos = [
     // Explicitly mapping from longFormVideosData (Indices 3-5)
     { client: 'Beardo', title: 'YouTube 01', link: 'https://www.youtube.com/embed/9KICweMciK4', thumbnail: 'https://img.youtube.com/vi/9KICweMciK4/maxresdefault.jpg' },
     { client: 'Beardo', title: 'YouTube 02', link: 'https://www.youtube.com/embed/_Cao_r2swWQ', thumbnail: 'https://img.youtube.com/vi/_Cao_r2swWQ/maxresdefault.jpg' },
-    { client: 'Beardo', title: 'YouTube 03', link: 'https://www.youtube.com/embed/ta5uEqzhTBo', thumbnail: 'https://img.youtube.com/vi/ta5uEqzhTBo/maxresdefault.jpg' },
+    { client: 'Santu', title: 'YouTube 03', link: 'https://www.youtube.com/embed/Ijhy7m2sDeA', thumbnail: 'https://img.youtube.com/vi/Ijhy7m2sDeA/maxresdefault.jpg' },
     // Previously used createMockVideo (Horizontal)
-    { client: 'Gaming Channel', title: 'YouTube 04', link: 'https://www.youtube.com/embed/placeholder_yt_4', thumbnail: 'https://img.youtube.com/vi/placeholder_yt_4/maxresdefault.jpg' },
+    { client: 'Santu', title: 'YouTube 04', link: 'https://www.youtube.com/embed/gYVne66AaxE', thumbnail: 'https://img.youtube.com/vi/gYVne66AaxE/maxresdefault.jpg' },
 ];
 // --- Reusable Sub-Components ---
 
