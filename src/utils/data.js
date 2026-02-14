@@ -1,7 +1,3 @@
-
-
-import {RiTailwindCssFill} from "react-icons/ri";
-import {SiMongodb} from "react-icons/si";
 import beardo1 from "./works/shorts/beardo_1.png"
 import beardo2 from "./works/shorts/beardo_2.png"
 import beardo3 from "./works/shorts/beardo_3.png"
@@ -16,29 +12,25 @@ import bl5 from "./works/long/bl5.png"
 import bl6 from "./works/long/bl6.png"
 
 
-
-
-
-
 export const Hero_Data = {
-    HeroPicture: "web.png", 
-    Name: "KV Media Works", 
-    Tagline: "Expert video editing for creators and businesses alike. Elevating your content with precision and creativity.", 
-    HeroTitle: "A Video Editing Agency", 
+    HeroPicture: "web.png",
+    Name: "KV Media Works",
+    Tagline: "Expert video editing for creators and businesses alike. Elevating your content with precision and creativity.",
+    HeroTitle: "A Video Editing Agency",
     HeroPictureDiscription: "We Transforming Your Clips Into Art."
 };
 
 
 export const About_Data = {
-    AboutTitle: "About Us", 
-   
-    AboutPara: "KV Media Works is a creative powerhouse in video editing, offering an array of services from short-form social media clips to full-length cinematic projects. We blend precision with creativity to bring every idea to life. Led by our founder, our team is driven to exceed client expectations by delivering high-quality, innovative results that set new standards in the world of video editing. We’re passionate about pushing the boundaries of what’s possible, ensuring that every project not only meets but surpasses the vision behind it. Our founder's expertise and hands-on approach have fostered a culture of excellence and creativity, inspiring each team member to strive for perfection. Below are some key achievements and milestones that showcase the foundation of KV Media Works.", 
- AboutPara1: "    KV Media Works specializes in transforming your footage into compelling visual stories. Our expert team combines creativity and precision to deliver high-quality video content. Whether for social media or cinematic productions, we ensure your vision comes to life.",
-    AboutUsPicture: "video-editing.png", 
+    AboutTitle: "About Us",
+
+    AboutPara: "KV Media Works is a creative powerhouse in video editing, offering an array of services from short-form social media clips to full-length cinematic projects. We blend precision with creativity to bring every idea to life. Led by our founder, our team is driven to exceed client expectations by delivering high-quality, innovative results that set new standards in the world of video editing. We're passionate about pushing the boundaries of what's possible, ensuring that every project not only meets but surpasses the vision behind it. Our founder's expertise and hands-on approach have fostered a culture of excellence and creativity, inspiring each team member to strive for perfection.",
+    AboutPara1: "KV Media Works specializes in transforming your footage into compelling visual stories. Our expert team combines creativity and precision to deliver high-quality video content. Whether for social media or cinematic productions, we ensure your vision comes to life.",
+    AboutUsPicture: "video-editing.png",
     AboutUsTag: "'KV Media Works' Where Creativity Meets Precision",
     Stats: {
-        NumberOfProjects: "100+", 
-        ClientsWorkedWith: "15+", 
+        NumberOfProjects: "100+",
+        ClientsWorkedWith: "15+",
         YearsOfExperience: "3+"
     },
     email:"mediaworkskv@gmail.com",
@@ -49,7 +41,7 @@ export const About_Data = {
 
 
 export const ShowreelText = {
-    Line1: "Experience the art of storytelling through visuals.", 
+    Line1: "Experience the art of storytelling through visuals.",
     Line2: "Watch our showreel to see how we bring ideas to life.",
     videoUrl:""
 };
@@ -57,59 +49,58 @@ export const ShowreelText = {
 export const Whatwedo_Data = [
   {
     Id: "01",
-    Icon: "bi bi-instagram", // Bootstrap icon for Instagram
+    Icon: "bi bi-instagram",
     Title: "Instagram Reels",
     Comment: "Expertly crafted Instagram Reels, focused on high retention and engagement for your audience."
   },
   {
     Id: "02",
-    Icon: "bi bi-youtube", // Bootstrap icon for YouTube
+    Icon: "bi bi-youtube",
     Title: "YouTube Shorts",
     Comment: "Engaging YouTube Shorts tailored to capture attention in the first few seconds, designed for maximum impact."
   },
   {
     Id: "03",
-    Icon: "bi bi-film", // Bootstrap icon for films
+    Icon: "bi bi-film",
     Title: "Long-form Videos",
     Comment: "High-quality long-form video content for YouTube or other platforms, perfect for vlogs, tutorials, or storytelling."
   },
   {
     Id: "04",
-    Icon: "bi bi-briefcase", // Bootstrap icon for briefcase
+    Icon: "bi bi-briefcase",
     Title: "Corporate Videos",
     Comment: "Professional corporate video production to showcase your brand, services, or products with a polished touch."
   },
   {
     Id: "05",
-    Icon: "bi bi-play-circle", // Bootstrap icon for music
+    Icon: "bi bi-play-circle",
     Title: "Cinematic Mashups",
     Comment: "Creative cinematic mashups that bring together visuals and music in a compelling and artistic format."
   },
   {
     Id: "06",
-    Icon: "bi bi-camera", // Bootstrap icon for camera
+    Icon: "bi bi-camera",
     Title: "Short Film Editing",
     Comment: "Complete editing solutions for short films, ensuring a smooth narrative flow with cinematic effects."
   },
   {
     Id: "07",
-    Icon: "bi bi-mic", // Bootstrap icon for mic
+    Icon: "bi bi-mic",
     Title: "Podcast Videos",
     Comment: "Turn your podcast into engaging video content with smooth transitions, clear audio, and visual enhancements."
   },
   {
     Id: "08",
-    Icon: "bi bi-music-note", // Bootstrap icon for play
+    Icon: "bi bi-music-note",
     Title: "Music Videos",
     Comment: "Create visually stunning music videos that capture the essence of your song, enhancing the listening experience."
-},
-{
+  },
+  {
     Id: "09",
-    Icon: "bi bi-file-earmark-text", // Bootstrap icon for document
+    Icon: "bi bi-file-earmark-text",
     Title: "Tutorial Videos",
     Comment: "Professional tutorial videos that educate and inform, breaking down complex concepts into easy-to-understand visuals."
-}
-
+  }
 ];
 
 

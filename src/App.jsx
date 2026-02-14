@@ -1,48 +1,66 @@
-import React from 'react';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Works from './components/Works';
-import Showreel from './components/Showreel';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Whatwedo from './components/Whatwedo';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import MoreWorks from './components/MoreWorks';
+import PageTransition from './components/PageTransition';
+import CustomCursor from './components/CustomCursor';
+import HomePage from './pages/HomePage';
+
+// Lazy-load secondary pages — only HomePage loads eagerly
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const BlogsPage = lazy(() => import('./pages/BlogsPage'));
+const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+
+/* Loading fallback — spinner with brand styling */
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#020e2b' }}>
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+      <p className="text-[0.7rem] uppercase tracking-[0.2em] text-white/30">Loading</p>
+    </div>
+  </div>
+);
+
+/* 404 Page */
+const NotFound = () => (
+  <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#020e2b' }}>
+    <div className="text-center">
+      <p className="text-[8rem] md:text-[12rem] font-bold leading-none text-white/[0.04]">404</p>
+      <h1 className="text-display-sm text-white -mt-8 mb-4">Page not found</h1>
+      <p className="text-body text-white/50 mb-8">The page you're looking for doesn't exist.</p>
+      <Link to="/" className="btn-primary">Back to Home</Link>
+    </div>
+  </div>
+);
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* Route for the main page */}
-        <Route
-          path="/"
-          element={
-            <div className="bg-background">
-              <div
-                style={{
-                  backgroundImage: `radial-gradient(circle at 50% 50%, rgba(0, 70, 200, 0.2), rgba(0, 30, 60, 0.1))`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  height: '100%',
-                  paddingBottom: '50px',
-                }}
-              >
-                <Navbar />
-                <Hero />
-              </div>
-              <About />
-              <Works />
-              <Showreel />
-              <Whatwedo />
-              <Contact />
-              <Footer />
-            </div>
-          }
-        />
-        {/* Route for the MoreWorks page */}
-        <Route path="/works" element={<MoreWorks />}/>
-      </Routes>
+      <CustomCursor />
+      <Navbar />
+      <main>
+        <PageTransition>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/blog" element={<BlogsPage />} />
+              <Route path="/testimonials" element={<TestimonialsPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              {/* Legacy route */}
+              <Route path="/works" element={<PortfolioPage />} />
+              {/* 404 fallback */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </PageTransition>
+      </main>
+      <Footer />
     </BrowserRouter>
   );
 };
