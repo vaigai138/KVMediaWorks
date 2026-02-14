@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress } from '../hooks/useScrollParallax';
 import { useCountUp } from '../hooks/useCountUp';
-import { About_Data } from '../utils/data';
+import { About_Data, getWhatsAppLink } from '../utils/data';
 
 /* ═══════════════════════════════════════════════════════════
    ABOUT PAGE — CINEMATIC DESIGN PATTERNS
@@ -34,7 +34,7 @@ const milestones = [
   { year: '2024', title: 'Founded', description: 'KV Media Works was established with a vision to redefine video production standards.' },
   { year: '2024', title: '50+ Projects', description: 'Reached our first major milestone — 50 projects delivered across multiple industries.' },
   { year: '2025', title: '100+ Projects', description: 'Crossed 100 projects with a growing roster of repeat clients and brand partnerships.' },
-  { year: '2025', title: 'Expanding', description: 'Building a larger team and expanding into new creative verticals and markets.' },
+  { year: '2025', title: '700+ Videos', description: 'Delivered 700+ videos for 65+ clients worldwide, expanding into new creative verticals.' },
 ];
 
 /* ═══════════════════════════════════════
@@ -144,9 +144,9 @@ const AboutPage = () => {
 
           <ScrollReveal delay={300}>
             <div className="flex items-center gap-6">
-              <Link to="/contact" className="btn-primary">
+              <a href={getWhatsAppLink('Hi KV Media Works! I would like to discuss a project.')} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Start a project
-              </Link>
+              </a>
               <Link to="/portfolio" className="text-caption text-white/40 tracking-wide inline-flex items-center gap-3 hover:text-primary/60 transition-colors">
                 <span className="w-8 h-px bg-white/[0.08]" />
                 View our work
@@ -176,8 +176,8 @@ const AboutPage = () => {
             <ScrollReveal delay={100}>
               <div className="aspect-[4/3] rounded-sm overflow-hidden bg-surface border border-white/[0.06] relative group">
                 <img
-                  src="/video-editing.png"
-                  alt="KV Media Works — video editing studio workspace"
+                  src="/web.png"
+                  alt="KV Media Works"
                   className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500"
                   decoding="async"
                 />
@@ -222,12 +222,12 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.04] rounded-sm overflow-hidden">
             <ScrollReveal delay={0}>
               <div className="bg-background">
-                <StatItem number={100} suffix="+" label="Projects Completed" />
+                <StatItem number={700} suffix="+" label="Videos Delivered" />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <div className="bg-background">
-                <StatItem number={15} suffix="+" label="Clients Served" />
+                <StatItem number={65} suffix="+" label="Clients Worldwide" />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={300}>
@@ -239,7 +239,79 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* ═══════════ 05 — VALUES ═══════════ */}
+      {/* ═══════════ 05 — MEET OUR FOUNDER ═══════════ */}
+      <section className="section-padding relative overflow-hidden" style={{ backgroundColor: '#031539' }}>
+        <div className="section-edge-light" />
+        <div className="grain-overlay" />
+
+        <div className="container-luxury relative z-10">
+          <ScrollReveal>
+            <div className="flex items-center gap-6 mb-20">
+              <span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">05</span>
+              <div className="w-8 h-px bg-primary/20" />
+              <p className="overline-text">Meet Our Founder</p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal delay={100}>
+              <div className="aspect-[3/4] max-w-md mx-auto lg:mx-0 rounded-sm overflow-hidden bg-surface border border-white/[0.06] relative group">
+                {/* Replace src with founder image path when ready, e.g. src="/founder.jpg" */}
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0a1e3d] to-[#020e2b]">
+                  <span className="text-[8rem] md:text-[10rem] font-bold leading-none text-white/[0.04] select-none">VV</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <div>
+                <h2 className="text-display-sm text-white mb-3 leading-snug">
+                  Vaigai Vendhan
+                </h2>
+                <p className="text-primary/60 text-body-lg mb-8">Founder & Creative Director</p>
+
+                <div className="space-y-5">
+                  <p className="text-body text-white/55 leading-relaxed">
+                    Vaigai Vendhan is the visionary behind KV Media Works. With a deep passion for visual storytelling and a keen eye for cinematic detail, he founded KV Media Works to bridge the gap between creative vision and professional video production.
+                  </p>
+                  <p className="text-body text-white/55 leading-relaxed">
+                    His hands-on approach to every project ensures that each client receives personalized attention and content that truly represents their brand. From working with top creators to major brands, Vaigai brings a unique blend of technical expertise and creative instinct to the table.
+                  </p>
+                  <p className="text-body text-white/55 leading-relaxed">
+                    Under his leadership, KV Media Works has grown from a one-person operation to a creative powerhouse delivering 700+ videos for 65+ clients worldwide, setting new standards in video editing and production.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex items-center gap-4">
+                  <a
+                    href={About_Data.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center border border-white/[0.08] rounded-sm text-white/40 hover:text-primary hover:border-primary/30 transition-all duration-300"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                  <a
+                    href={`mailto:${About_Data.email}`}
+                    className="w-10 h-10 flex items-center justify-center border border-white/[0.08] rounded-sm text-white/40 hover:text-primary hover:border-primary/30 transition-all duration-300"
+                    aria-label="Email"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ 06 — VALUES ═══════════ */}
       <section className="section-padding relative overflow-hidden" style={{ backgroundColor: '#041633' }}>
         <div className="section-edge-light" />
         <div className="grain-overlay" />
@@ -252,7 +324,7 @@ const AboutPage = () => {
         <div className="container-luxury relative z-10">
           <ScrollReveal>
             <div className="flex items-center gap-6 mb-20">
-              <span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">05</span>
+              <span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">06</span>
               <div className="w-8 h-px bg-primary/20" />
               <p className="overline-text">Our Values</p>
             </div>
@@ -282,12 +354,12 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* ═══════════ 06 — TIMELINE ═══════════ */}
+      {/* ═══════════ 07 — TIMELINE ═══════════ */}
       <section className="section-padding relative overflow-hidden" style={{ backgroundColor: '#020e2b' }}>
         <div className="container-luxury relative z-10">
           <ScrollReveal>
             <div className="flex items-center gap-6 mb-20">
-              <span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">06</span>
+              <span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">07</span>
               <div className="w-8 h-px bg-primary/20" />
               <p className="overline-text">Our Journey</p>
             </div>
@@ -326,7 +398,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* ═══════════ 07 — CTA ═══════════ */}
+      {/* ═══════════ 08 — CTA ═══════════ */}
       <section className="relative py-28 lg:py-40 overflow-hidden" style={{ backgroundColor: '#041633' }}>
         <div className="grain-overlay" />
         <div className="section-edge-light" />
@@ -340,7 +412,7 @@ const AboutPage = () => {
         <div className="container-luxury relative z-10">
           <ScrollReveal duration={1.6}>
             <div className="max-w-3xl mx-auto text-center">
-              <span className="text-[0.65rem] font-mono text-primary/30 tracking-widest block mb-10">07</span>
+              <span className="text-[0.65rem] font-mono text-primary/30 tracking-widest block mb-10">08</span>
 
               <h2 className="text-[1.8rem] md:text-display-sm lg:text-display text-white leading-tight mb-6">
                 Ready to work with us?
@@ -352,9 +424,9 @@ const AboutPage = () => {
 
               <div className="w-10 h-px bg-primary/25 mx-auto mb-10" />
 
-              <Link to="/contact" className="btn-primary">
+              <a href={getWhatsAppLink('Hi KV Media Works! I would like to discuss a project.')} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Get in Touch
-              </Link>
+              </a>
             </div>
           </ScrollReveal>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import { blogsData } from '../utils/blogsData';
 
@@ -32,26 +33,33 @@ const BlogsPage = () => {
       <section className="pb-20">
         <div className="container-luxury">
           <ScrollReveal>
-            <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center card-luxury p-8 md:p-12">
-              <div className="aspect-[16/10] rounded-sm bg-surface border border-white/[0.04] overflow-hidden flex items-center justify-center">
-                <span className="text-white/[0.05] text-[8rem] font-bold leading-none">01</span>
-              </div>
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="overline-text">{featuredBlog.category}</span>
-                  <span className="text-overline text-white/20">{featuredBlog.date}</span>
+            <Link to={`/blog/${featuredBlog.slug}`} className="block group">
+              <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center card-luxury p-8 md:p-12">
+                <div className="aspect-[16/10] rounded-sm bg-surface border border-white/[0.04] overflow-hidden flex items-center justify-center group-hover:border-primary/20 transition-colors duration-300">
+                  {featuredBlog.image ? (
+                    <img src={featuredBlog.image} alt={featuredBlog.title} className="w-full h-full object-cover" decoding="async" />
+                  ) : (
+                    <span className="text-white/[0.05] text-[8rem] font-bold leading-none">01</span>
+                  )}
                 </div>
-                <h2 className="text-heading md:text-display-sm text-white mb-6 leading-snug">
-                  {featuredBlog.title}
-                </h2>
-                <p className="text-body text-white/40 leading-relaxed mb-6">
-                  {featuredBlog.excerpt}
-                </p>
-                <div className="flex items-center gap-4">
-                  <span className="text-caption text-white/25">{featuredBlog.readTime}</span>
+                <div>
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="overline-text">{featuredBlog.category}</span>
+                    <span className="text-overline text-white/20">{featuredBlog.date}</span>
+                  </div>
+                  <h2 className="text-heading md:text-display-sm text-white mb-6 leading-snug group-hover:text-primary transition-colors duration-300">
+                    {featuredBlog.title}
+                  </h2>
+                  <p className="text-body text-white/40 leading-relaxed mb-6">
+                    {featuredBlog.excerpt}
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <span className="text-caption text-white/25">{featuredBlog.readTime}</span>
+                    <span className="text-caption text-primary/50 group-hover:text-primary transition-colors">Read article →</span>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
@@ -66,24 +74,30 @@ const BlogsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {remainingBlogs.map((blog, index) => (
               <ScrollReveal key={blog.id} delay={index * 80}>
-                <article className="h-full">
-                  <div className="aspect-[16/9] rounded-sm bg-surface border border-white/[0.04] mb-6 overflow-hidden flex items-center justify-center">
-                    <span className="text-white/[0.05] text-[5rem] font-bold leading-none">
-                      {String(blog.id).padStart(2, '0')}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="overline-text">{blog.category}</span>
-                    <span className="text-overline text-white/20">{blog.readTime}</span>
-                  </div>
-                  <h3 className="text-subheading text-white mb-3 leading-snug">
-                    {blog.title}
-                  </h3>
-                  <p className="text-body text-white/35 line-clamp-3 mb-4">
-                    {blog.excerpt}
-                  </p>
-                  <span className="text-overline text-white/20">{blog.date}</span>
-                </article>
+                <Link to={`/blog/${blog.slug}`} className="block group h-full">
+                  <article className="h-full">
+                    <div className="aspect-[16/9] rounded-sm bg-surface border border-white/[0.04] mb-6 overflow-hidden flex items-center justify-center group-hover:border-primary/20 transition-colors duration-300">
+                      {blog.image ? (
+                        <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" decoding="async" />
+                      ) : (
+                        <span className="text-white/[0.05] text-[5rem] font-bold leading-none">
+                          {String(blog.id).padStart(2, '0')}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-4 mb-3">
+                      <span className="overline-text">{blog.category}</span>
+                      <span className="text-overline text-white/20">{blog.readTime}</span>
+                    </div>
+                    <h3 className="text-subheading text-white mb-3 leading-snug group-hover:text-primary transition-colors duration-300">
+                      {blog.title}
+                    </h3>
+                    <p className="text-body text-white/35 line-clamp-3 mb-4">
+                      {blog.excerpt}
+                    </p>
+                    <span className="text-overline text-white/20">{blog.date}</span>
+                  </article>
+                </Link>
               </ScrollReveal>
             ))}
           </div>

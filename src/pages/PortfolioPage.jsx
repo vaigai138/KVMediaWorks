@@ -2,36 +2,21 @@ import { useState, useEffect, useRef, memo } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress } from '../hooks/useScrollParallax';
-import { BeardoShorts, NiveaShorts, NishkaShorts, VivinShorts, BusinessShorts, DivyaRavirajShorts, AdvertisementShorts, SantoUKShorts, StockInkShorts } from '../utils/moreworks/shorts/shorts';
-import { BeardoLong, NiveaLong } from '../utils/moreworks/longs/longs';
+import { About_Data, getWhatsAppLink, shortFormVideosData, longFormVideosData, motionDesignVideos, corporateProductVideos, doctorVideos, youtubeVideos } from '../utils/data';
 
 /* ═══════════════════════════════════════════════════════════
    PORTFOLIO PAGE — PRODUCTION-LEVEL LUXURY
-   Client-by-client showcase · Editorial layout · Hover zoom
-   Always-visible info bars · Ambient effects · Bento grids
+   Category-based showcase · Editorial layout · Hover zoom
+   Always-visible info bars · Ambient effects · In-tab playback
    ═══════════════════════════════════════════════════════════ */
 
-const categories = [
-  { id: 'all', label: 'All Work' },
-  { id: 'shorts', label: 'Short Form' },
-  { id: 'long', label: 'Long Form' },
-];
-
-const shortFormClients = [
-  { name: 'Beardo', items: BeardoShorts, tag: 'Brand' },
-  { name: 'Nivea', items: NiveaShorts, tag: 'Brand' },
-  { name: 'Nishka', items: NishkaShorts, tag: 'Brand' },
-  { name: 'Vivin', items: VivinShorts, tag: 'Brand' },
-  { name: 'Divya Raviraj', items: DivyaRavirajShorts, tag: 'Creator' },
-  { name: 'Advertisement', items: AdvertisementShorts, tag: 'Ads' },
-  { name: 'Santo UK', items: SantoUKShorts, tag: 'Creator' },
-  { name: 'Stock Ink', items: StockInkShorts, tag: 'Brand' },
-  { name: 'Business', items: BusinessShorts, tag: 'Corporate' },
-];
-
-const longFormClients = [
-  { name: 'Beardo', items: BeardoLong, tag: 'Brand' },
-  { name: 'Nivea', items: NiveaLong, tag: 'Brand' },
+const categoryData = [
+  { key: 'short', tag: 'Short Form', items: shortFormVideosData, type: 'short' },
+  { key: 'long', tag: 'Long Form', items: longFormVideosData, type: 'long' },
+  { key: 'motion', tag: 'Motion Design', items: motionDesignVideos, type: 'long' },
+  { key: 'corporate', tag: 'Corporate', items: corporateProductVideos, type: 'long' },
+  { key: 'doctor', tag: 'Doctor', items: doctorVideos, type: 'short' },
+  { key: 'youtube', tag: 'YouTube', items: youtubeVideos, type: 'long' },
 ];
 
 /* ═══════════════════════════════════════
@@ -111,6 +96,7 @@ const LazyImage = ({ src, alt, className = '' }) => {
   );
 };
 
+
 /* ═══════════════════════════════════════
    PHILOSOPHY — Scroll-driven opacity
    ═══════════════════════════════════════ */
@@ -145,61 +131,70 @@ const PhilosophySection = () => {
 
 /* ═══════════════════════════════════════
    WORK CARD — Luxury production card
-   Always-visible info · Hover zoom · Glow
+   Always-visible info · Hover zoom · In-tab play
    ═══════════════════════════════════════ */
 
-const WorkCard = ({ work, index, clientName, type = 'short', featured = false }) => {
+const WorkCard = ({ work, index, type = 'short' }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const isShort = type === 'short';
 
   return (
-    <a
-      href={work.videoLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`block ${isShort ? 'aspect-[9/16]' : 'aspect-video'} rounded-sm overflow-hidden relative group
+    <div
+      className={`block w-full ${isShort ? 'aspect-[9/16]' : 'aspect-video'} rounded-sm overflow-hidden relative
         border border-white/[0.04]
-        hover:border-primary/20
-        transition-all duration-500
-        hover:shadow-[0_0_40px_-8px_rgba(15,157,248,0.12)]`}
+        ${!isPlaying ? 'hover:border-primary/20 hover:shadow-[0_0_40px_-8px_rgba(15,157,248,0.12)]' : ''}
+        transition-all duration-500`}
     >
-      <LazyImage
-        src={work.coverImage}
-        alt={`${clientName} — ${work.id}`}
-        className="w-full h-full"
-      />
+      {!isPlaying ? (
+        <button onClick={() => setIsPlaying(true)} className="w-full h-full relative group text-left">
+          <LazyImage
+            src={work.thumbnail}
+            alt={`${work.client} — ${work.title}`}
+            className="w-full h-full"
+          />
 
-      {/* Always-visible bottom info bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent p-3 md:p-4 z-10">
-        <div className="flex items-end justify-between">
-          <div>
-            <span className="text-[0.5rem] font-mono text-primary/50 block leading-none">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <p className="text-[0.6rem] md:text-[0.7rem] text-white/55 mt-1 leading-tight">
-              {clientName}
-            </p>
+          {/* Always-visible bottom info bar */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent p-3 md:p-4 z-10">
+            <div className="flex items-end justify-between">
+              <div>
+                <span className="text-[0.5rem] font-mono text-primary/50 block leading-none">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p className="text-[0.6rem] md:text-[0.7rem] text-white/55 mt-1 leading-tight">
+                  {work.client}
+                </p>
+              </div>
+              {/* Play indicator */}
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center
+                group-hover:border-primary/30 group-hover:bg-primary/[0.08] transition-all duration-300 backdrop-blur-sm">
+                <svg className="w-2.5 h-2.5 md:w-3 md:h-3 text-white/40 ml-0.5 group-hover:text-white/80 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
           </div>
-          {/* Play indicator */}
-          <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center
-            group-hover:border-primary/30 group-hover:bg-primary/[0.08] transition-all duration-300 backdrop-blur-sm">
-            <svg className="w-2.5 h-2.5 md:w-3 md:h-3 text-white/40 ml-0.5 group-hover:text-white/80 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-        </div>
-      </div>
 
-      {/* Hover overlay — subtle vignette intensifies */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
-    </a>
+          {/* Hover overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
+        </button>
+      ) : (
+        <iframe
+          src={`${work.link}?autoplay=1`}
+          className="w-full h-full"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          title={`${work.client} — ${work.title}`}
+        />
+      )}
+    </div>
   );
 };
 
 /* ═══════════════════════════════════════
-   CLIENT HEADER — Editorial style
+   CATEGORY HEADER — Editorial style
    ═══════════════════════════════════════ */
 
-const ClientHeader = ({ index, name, count, tag }) => (
+const CategoryHeader = ({ index, name, count }) => (
   <div className="flex items-baseline justify-between border-b border-white/[0.05] pb-6 mb-8">
     <div className="flex items-center gap-5">
       <span className="text-[0.6rem] font-mono text-primary/35 tracking-widest">
@@ -209,9 +204,6 @@ const ClientHeader = ({ index, name, count, tag }) => (
       <h3 className="text-[1.1rem] md:text-[1.4rem] lg:text-[1.6rem] text-white font-light tracking-tight">
         {name}
       </h3>
-      <span className="text-[0.55rem] uppercase tracking-[0.15em] text-primary/30 font-medium hidden md:block">
-        {tag}
-      </span>
     </div>
     <span className="text-[0.55rem] font-mono text-white/20">
       {count} {count === 1 ? 'work' : 'works'}
@@ -224,25 +216,11 @@ const ClientHeader = ({ index, name, count, tag }) => (
    ═══════════════════════════════════════ */
 
 const PortfolioPage = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [expandedClients, setExpandedClients] = useState({});
+  const [expandedCategories, setExpandedCategories] = useState({});
 
-  const toggleClient = (key) => {
-    setExpandedClients(prev => ({ ...prev, [key]: !prev[key] }));
+  const toggleCategory = (key) => {
+    setExpandedCategories((prev) => ({ ...prev, [key]: !prev[key] }));
   };
-
-  const showShorts = activeCategory !== 'long';
-  const showLongs = activeCategory !== 'shorts';
-
-  // In "all" view, show 4 per client. In filtered view, show 6 initially.
-  const getVisibleItems = (client, key) => {
-    const isExpanded = expandedClients[key];
-    if (isExpanded) return client.items;
-    const limit = activeCategory === 'all' ? 4 : 6;
-    return client.items.slice(0, limit);
-  };
-
-  const getLimit = () => (activeCategory === 'all' ? 4 : 6);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#020e2b' }}>
@@ -295,9 +273,9 @@ const PortfolioPage = () => {
 
           <ScrollReveal delay={300}>
             <div className="flex items-center gap-6">
-              <Link to="/contact" className="btn-primary">
+              <a href={getWhatsAppLink('Hi KV Media Works! I saw your portfolio and want to start a project.')} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Start a project
-              </Link>
+              </a>
               <a href="#works" className="text-caption text-white/40 tracking-wide inline-flex items-center gap-3 hover:text-primary/60 transition-colors">
                 <span className="w-8 h-px bg-white/[0.08]" />
                 Browse work
@@ -334,7 +312,7 @@ const PortfolioPage = () => {
             <div className="max-w-5xl mx-auto">
               <div className="vimeo-container rounded-sm overflow-hidden border border-white/[0.06]">
                 <iframe
-                  src="https://player.vimeo.com/video/1162083158?h=&title=0&byline=0&portrait=0&color=0f9df8"
+                  src="https://player.vimeo.com/video/1162083158?h=&title=0&byline=0&portrait=0&color=0f9df8&loop=1&autopause=0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
                   title="KV Media Works Showreel"
@@ -348,7 +326,7 @@ const PortfolioPage = () => {
       {/* ═══════════ 03 — PHILOSOPHY ═══════════ */}
       <PhilosophySection />
 
-      {/* ═══════════ 04 — CLIENT SHOWCASE ═══════════ */}
+      {/* ═══════════ 04 — ALL CATEGORIES ═══════════ */}
       <section id="works" className="relative overflow-hidden" style={{ backgroundColor: '#020e2b' }}>
         <div className="section-edge-light" />
 
@@ -359,7 +337,7 @@ const PortfolioPage = () => {
         </div>
 
         <div className="container-luxury relative z-10 py-24 lg:py-32">
-          {/* Section header + filter */}
+          {/* Section header */}
           <ScrollReveal>
             <div className="flex items-center gap-6 mb-16">
               <span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">04</span>
@@ -369,142 +347,58 @@ const PortfolioPage = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
-              <h2 className="text-[1.6rem] md:text-display-sm text-white leading-snug max-w-xl">
-                Crafted with precision.
-                <br />
-                <span className="text-white/40">Client by client.</span>
-              </h2>
-
-              {/* Filter tabs */}
-              <div className="flex items-center gap-2">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => {
-                      setActiveCategory(cat.id);
-                      setExpandedClients({});
-                    }}
-                    className={`px-5 py-2.5 text-[0.65rem] uppercase tracking-[0.15em] border transition-all duration-300 rounded-sm ${
-                      activeCategory === cat.id
-                        ? 'bg-primary/10 border-primary/30 text-white'
-                        : 'bg-transparent border-white/[0.06] text-white/35 hover:text-white/60 hover:border-white/[0.12]'
-                    }`}
-                  >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-            </div>
+            <h2 className="text-[1.6rem] md:text-display-sm text-white leading-snug max-w-xl mb-20">
+              Crafted with precision.
+              <br />
+              <span className="text-white/40">Category by category.</span>
+            </h2>
           </ScrollReveal>
 
-          {/* ——————————— SHORT FORM CLIENTS ——————————— */}
-          {showShorts && (
-            <div className="mb-16">
-              {activeCategory !== 'all' && (
+          {/* ——————————— CATEGORY SECTIONS ——————————— */}
+          {categoryData.map((section, si) => {
+            const isExpanded = expandedCategories[section.key];
+            const displayItems = isExpanded ? section.items : section.items.slice(0, 4);
+            const hasMore = section.items.length > 4;
+
+            return (
+              <div key={section.key} className="mb-20 last:mb-0">
                 <ScrollReveal>
-                  <div className="flex items-center gap-4 mb-14">
-                    <div className="w-10 h-px bg-primary/20" />
-                    <span className="text-[0.7rem] uppercase tracking-[0.2em] text-white/30 font-medium">Short Form Content</span>
-                    <div className="flex-1 h-px bg-white/[0.03]" />
-                  </div>
+                  <CategoryHeader
+                    index={si + 1}
+                    name={section.tag}
+                    count={section.items.length}
+                  />
                 </ScrollReveal>
-              )}
 
-              {shortFormClients.map((client, ci) => {
-                const key = `short-${client.name}`;
-                const visible = getVisibleItems(client, key);
-                const hasMore = client.items.length > getLimit();
-                const isExpanded = expandedClients[key];
-
-                return (
-                  <ScrollReveal key={key} delay={Math.min(ci * 80, 300)}>
-                    <div className="mb-16 last:mb-0">
-                      <ClientHeader
-                        index={ci + 1}
-                        name={client.name}
-                        count={client.items.length}
-                        tag={client.tag}
+                <div className={`grid ${
+                  section.type === 'short'
+                    ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4'
+                    : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+                } gap-3 md:gap-4`}>
+                  {displayItems.map((work, i) => (
+                    <ScrollReveal key={`${section.key}-${i}`} delay={Math.min(i * 60, 300)}>
+                      <WorkCard
+                        work={work}
+                        index={i}
+                        type={section.type}
                       />
-
-                      {/* Bento grid — 4 cols on desktop */}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-                        {visible.map((work, i) => (
-                          <WorkCard
-                            key={`${key}-${i}`}
-                            work={work}
-                            index={i}
-                            clientName={client.name}
-                            type="short"
-                          />
-                        ))}
-                      </div>
-
-                      {/* Expand / collapse */}
-                      {hasMore && (
-                        <div className="mt-6 flex justify-center">
-                          <button
-                            onClick={() => toggleClient(key)}
-                            className="text-[0.65rem] uppercase tracking-[0.15em] text-white/30 inline-flex items-center gap-4 hover:text-primary/60 transition-colors duration-300 py-3"
-                          >
-                            <span className="w-8 h-px bg-white/[0.06]" />
-                            {isExpanded
-                              ? 'Show less'
-                              : `View all ${client.items.length} works`
-                            }
-                            <span className="w-8 h-px bg-white/[0.06]" />
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
-          )}
-
-          {/* ——————————— LONG FORM CLIENTS ——————————— */}
-          {showLongs && (
-            <div>
-              <ScrollReveal>
-                <div className="flex items-center gap-4 mb-14">
-                  <div className="w-10 h-px bg-primary/20" />
-                  <span className="text-[0.7rem] uppercase tracking-[0.2em] text-white/30 font-medium">Long Form Content</span>
-                  <div className="flex-1 h-px bg-white/[0.03]" />
+                    </ScrollReveal>
+                  ))}
                 </div>
-              </ScrollReveal>
 
-              {longFormClients.map((client, ci) => {
-                const key = `long-${client.name}`;
-
-                return (
-                  <ScrollReveal key={key} delay={Math.min(ci * 100, 200)}>
-                    <div className="mb-16 last:mb-0">
-                      <ClientHeader
-                        index={ci + 1}
-                        name={client.name}
-                        count={client.items.length}
-                        tag={client.tag}
-                      />
-
-                      {/* 2-col grid for landscape cards */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                        {client.items.map((work, i) => (
-                          <WorkCard
-                            key={`${key}-${i}`}
-                            work={work}
-                            index={i}
-                            clientName={client.name}
-                            type="long"
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
-          )}
+                {hasMore && (
+                  <div className="mt-8 flex justify-center">
+                    <button
+                      onClick={() => toggleCategory(section.key)}
+                      className="px-8 py-3 text-[0.7rem] uppercase tracking-[0.15em] border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-300 rounded-sm"
+                    >
+                      {isExpanded ? 'Show less' : `See more works`}
+                    </button>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -534,13 +428,14 @@ const PortfolioPage = () => {
 
               <div className="w-10 h-px bg-primary/25 mx-auto mb-10" />
 
-              <Link to="/contact" className="btn-primary">
+              <a href={getWhatsAppLink('Hi KV Media Works! I loved your portfolio and would like to discuss a project.')} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Start Your Project
-              </Link>
+              </a>
             </div>
           </ScrollReveal>
         </div>
       </section>
+
     </div>
   );
 };

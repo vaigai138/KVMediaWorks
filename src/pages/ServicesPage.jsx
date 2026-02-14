@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress } from '../hooks/useScrollParallax';
 import { servicesData } from '../utils/servicesData';
+import { getWhatsAppLink } from '../utils/data';
 
 /* ═══════════════════════════════════════════════════════════
    SERVICES PAGE — PRODUCTION-LEVEL LUXURY
@@ -213,9 +214,9 @@ const ServicesPage = () => {
 
           <ScrollReveal delay={300}>
             <div className="flex items-center gap-6">
-              <Link to="/contact" className="btn-primary">
+              <a href={getWhatsAppLink('Hi KV Media Works! I would like to discuss your services.')} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Start a project
-              </Link>
+              </a>
               <Link to="/portfolio" className="text-caption text-white/40 tracking-wide inline-flex items-center gap-3 hover:text-primary/60 transition-colors">
                 <span className="w-8 h-px bg-white/[0.08]" />
                 View our work
@@ -358,9 +359,9 @@ const ServicesPage = () => {
 
               <div className="w-10 h-px bg-primary/25 mx-auto mb-10" />
 
-              <Link to="/contact" className="btn-primary">
+              <a href={getWhatsAppLink('Hi KV Media Works! I have a project in mind and would like to discuss.')} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Start a Project
-              </Link>
+              </a>
             </div>
           </ScrollReveal>
         </div>

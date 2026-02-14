@@ -1,86 +1,21 @@
 export const servicesData = [
-  {
-    id: "01",
-    title: "Video Editing",
-    description:
-      "Precision cuts, seamless transitions, and narrative-driven editing that transforms raw footage into compelling visual stories.",
-    icon: "film",
-  },
-  {
-    id: "02",
-    title: "Color Grading",
-    description:
-      "Cinematic color grading that sets the mood and elevates the visual tone of every frame to broadcast-quality standards.",
-    icon: "palette",
-  },
-  {
-    id: "03",
-    title: "Motion Graphics",
-    description:
-      "Dynamic motion design — from animated titles and lower thirds to full visual effects sequences that captivate audiences.",
-    icon: "layers",
-  },
-  {
-    id: "04",
-    title: "Reels & Shorts",
-    description:
-      "High-retention short-form content crafted for Instagram Reels, YouTube Shorts, and TikTok with scroll-stopping appeal.",
-    icon: "smartphone",
-  },
-  {
-    id: "05",
-    title: "Corporate Videos",
-    description:
-      "Polished corporate films, brand documentaries, and internal communications videos that reflect your brand's authority.",
-    icon: "briefcase",
-  },
-  {
-    id: "06",
-    title: "Promotional Videos",
-    description:
-      "Strategic promotional content designed to drive conversions — product launches, campaigns, and advertisement videos.",
-    icon: "megaphone",
-  },
-  {
-    id: "07",
-    title: "Social Media Content",
-    description:
-      "Platform-optimized video content tailored for engagement across Instagram, LinkedIn, Facebook, and emerging platforms.",
-    icon: "share",
-  },
-  {
-    id: "08",
-    title: "Music Videos",
-    description:
-      "Visually stunning music video editing with beat-synced cuts, creative effects, and artistic color treatments.",
-    icon: "music",
-  },
-  {
-    id: "09",
-    title: "Podcast Videos",
-    description:
-      "Professional podcast video production with multi-camera editing, dynamic layouts, and polished post-production.",
-    icon: "mic",
-  },
-  {
-    id: "10",
-    title: "Wedding Films",
-    description:
-      "Cinematic wedding films that capture the emotion, beauty, and essence of your special day with timeless elegance.",
-    icon: "heart",
-  },
-  {
-    id: "11",
-    title: "Tutorial & Course Videos",
-    description:
-      "Clean, structured educational content with screen recordings, annotations, and professional visual formatting.",
-    icon: "book-open",
-  },
-  {
-    id: "12",
-    title: "Short Film Editing",
-    description:
-      "Complete post-production for short films — from rough cut to final grade, ensuring narrative impact and cinematic quality.",
-    icon: "clapperboard",
-  },
+  { id: "01", title: "Short-Form Video Editing", description: "Scroll-stopping Reels, Shorts & TikTok content crafted for maximum retention and engagement across all social platforms.", icon: "smartphone" },
+  { id: "02", title: "Long-Form Video Editing", description: "Professional editing for YouTube videos, podcasts, and vlogs with seamless transitions, pacing, and narrative flow.", icon: "film" },
+  { id: "03", title: "Corporate Video Editing", description: "Polished company profiles, presentations, and internal communications that reflect your brand's authority and vision.", icon: "briefcase" },
+  { id: "04", title: "Promotional / Ad Videos", description: "Strategic promotional content designed to drive conversions — product launches, campaigns, and brand advertisements.", icon: "megaphone" },
+  { id: "05", title: "Social Media Ads", description: "High-converting ad creatives optimized for Meta, YouTube Ads, and other platforms to maximize your ROI.", icon: "share" },
+  { id: "06", title: "Podcast Video Editing", description: "Multi-camera podcast editing with dynamic layouts, captions, and polished post-production for professional output.", icon: "mic" },
+  { id: "07", title: "Interview Video Editing", description: "Clean, engaging interview edits with smooth cuts, B-roll integration, and professional audio balancing.", icon: "mic" },
+  { id: "08", title: "Documentary Editing", description: "Compelling documentary post-production with narrative structuring, archival footage integration, and cinematic grading.", icon: "film" },
+  { id: "09", title: "Educational / Tutorial Videos", description: "Clear, structured course content and explainer videos with screen recordings, annotations, and visual formatting.", icon: "book-open" },
+  { id: "10", title: "Event Videos", description: "Professional editing for weddings, functions, conferences, and live events — capturing every memorable moment.", icon: "heart" },
+  { id: "11", title: "Music Video Editing", description: "Visually stunning music videos with beat-synced cuts, creative effects, and artistic color treatments.", icon: "music" },
+  { id: "12", title: "Cinematic / Montage Videos", description: "Creative cinematic mashups and montages that bring together visuals and music in compelling artistic formats.", icon: "clapperboard" },
+  { id: "13", title: "Product Videos", description: "E-commerce product showcases with clean visuals, motion graphics, and persuasive storytelling to drive sales.", icon: "layers" },
+  { id: "14", title: "Real Estate Videos", description: "Professional property walkthrough videos with smooth transitions, aerial footage integration, and cinematic appeal.", icon: "briefcase" },
+  { id: "15", title: "Gaming Video Editing", description: "Dynamic gameplay highlight videos with engaging edits, effects, and commentary integration for gaming content.", icon: "smartphone" },
+  { id: "16", title: "Trailer / Teaser Editing", description: "High-impact trailers and teasers that build anticipation with dramatic pacing, music, and visual effects.", icon: "film" },
+  { id: "17", title: "Motion Graphics & Typography", description: "Dynamic motion design — animated titles, kinetic typography, info-graphics, and full visual effects sequences.", icon: "layers" },
+  { id: "18", title: "Testimonial Videos", description: "Professional testimonial video editing that builds trust and credibility with polished client story presentations.", icon: "mic" },
+  { id: "19", title: "YouTube Automation / Faceless", description: "Complete faceless YouTube channel content with AI voiceovers, stock footage curation, and engaging visual narratives.", icon: "share" },
 ];
