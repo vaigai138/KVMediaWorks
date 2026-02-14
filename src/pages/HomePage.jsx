@@ -172,7 +172,7 @@ const HeroSection = () => {
           className="text-[18rem] md:text-[28rem] lg:text-[36rem] font-bold leading-none block"
           style={{
             WebkitTextFillColor: 'transparent',
-            WebkitTextStroke: '1px rgba(255, 255, 255, 0.02)',
+            WebkitTextStroke: '1px rgba(255, 255, 255, 0.03)',
           }}
         >
           KV
@@ -192,13 +192,13 @@ const HeroSection = () => {
 
         <div className="hero-line hero-line-2">
           <h1 className="text-[2.8rem] md:text-[4.5rem] lg:text-[6.5rem] font-semibold leading-[0.92] tracking-[-0.03em] text-white">
-            <SplitText text="Frame by frame," baseDelay={2.0} />
+            <SplitText text="We Transform" baseDelay={2.0} />
           </h1>
         </div>
 
         <div className="hero-line hero-line-3">
           <span className="text-[2.8rem] md:text-[4.5rem] lg:text-[6.5rem] font-semibold leading-[0.92] tracking-[-0.03em] text-primary block">
-            <SplitText text="we build worlds." baseDelay={2.6} />
+            <SplitText text="your clips into Art !" baseDelay={2.6} />
           </span>
         </div>
 

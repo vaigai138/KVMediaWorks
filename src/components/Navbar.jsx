@@ -45,10 +45,10 @@ const Navbar = () => {
         <div className="container-luxury flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src="/web.png" alt="KV Media Works" className="h-9 w-auto" />
-            <span className="text-white font-medium text-subheading hidden sm:block">
+            <img src="./Kv.png" alt="KV Media Works" className="h-9 w-auto" />
+            {/* <span className="text-white font-medium text-subheading hidden sm:block">
               KV Media Works
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Nav Links */}
