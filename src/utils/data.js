@@ -49,21 +49,20 @@ export const Whatwedo_Data = [
 // ═══════════════════════════════════════
 
 export const shortFormVideosData = [
-    // InkCharts
+   
     { client: 'InkCharts', title: 'Short Video 1', link: 'https://www.youtube.com/embed/vnhVPFN9KvY', thumbnail: 'https://img.youtube.com/vi/vnhVPFN9KvY/maxresdefault.jpg' },
-    { client: 'InkCharts', title: 'Short Video 2', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
-    { client: 'InkCharts', title: 'Short Video 3', link: 'https://www.youtube.com/embed/8qJqVjjv-7Q', thumbnail: 'https://img.youtube.com/vi/8qJqVjjv-7Q/maxresdefault.jpg' },
-    { client: 'InkCharts', title: 'Short Video 4', link: 'https://www.youtube.com/embed/q9xzV-GO5oE', thumbnail: 'https://img.youtube.com/vi/q9xzV-GO5oE/maxresdefault.jpg' },
-    // Bolt Digitech
     { client: 'Bolt Digitech', title: 'Short Video 1', link: 'https://www.youtube.com/embed/apGvOvZFi6c', thumbnail: 'https://img.youtube.com/vi/apGvOvZFi6c/maxresdefault.jpg' },
-    { client: 'Bolt Digitech', title: 'Short Video 2', link: 'https://www.youtube.com/embed/5heTIg_ckjg', thumbnail: 'https://img.youtube.com/vi/5heTIg_ckjg/maxresdefault.jpg' },
-    { client: 'Bolt Digitech', title: 'Short Video 3', link: 'https://www.youtube.com/embed/6KeXpb6mxQM', thumbnail: 'https://img.youtube.com/vi/6KeXpb6mxQM/maxresdefault.jpg' },
-    // Santu
     { client: 'Santu', title: 'Short Video 1', link: 'https://www.youtube.com/embed/-AjTIYV-tUk', thumbnail: 'https://img.youtube.com/vi/-AjTIYV-tUk/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video 2', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short Video 2', link: 'https://www.youtube.com/embed/5heTIg_ckjg', thumbnail: 'https://img.youtube.com/vi/5heTIg_ckjg/maxresdefault.jpg' },
     { client: 'Santu', title: 'Short Video 2', link: 'https://www.youtube.com/embed/aykX6yfdt-A', thumbnail: 'https://img.youtube.com/vi/aykX6yfdt-A/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video 3', link: 'https://www.youtube.com/embed/8qJqVjjv-7Q', thumbnail: 'https://img.youtube.com/vi/8qJqVjjv-7Q/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short Video 3', link: 'https://www.youtube.com/embed/6KeXpb6mxQM', thumbnail: 'https://img.youtube.com/vi/6KeXpb6mxQM/maxresdefault.jpg' },
     { client: 'Santu', title: 'Short Video 3', link: 'https://www.youtube.com/embed/CTj9d2-8UR8', thumbnail: 'https://img.youtube.com/vi/CTj9d2-8UR8/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video 4', link: 'https://www.youtube.com/embed/q9xzV-GO5oE', thumbnail: 'https://img.youtube.com/vi/q9xzV-GO5oE/maxresdefault.jpg' },
     { client: 'Santu', title: 'Short Video 4', link: 'https://www.youtube.com/embed/JqGs08SYpP0', thumbnail: 'https://img.youtube.com/vi/JqGs08SYpP0/maxresdefault.jpg' },
     { client: 'Santu', title: 'Short Video 5', link: 'https://www.youtube.com/embed/rX8DixOPgdw', thumbnail: 'https://img.youtube.com/vi/rX8DixOPgdw/maxresdefault.jpg' },
+    
 ];
 
 export const longFormVideosData = [
@@ -138,9 +137,9 @@ export const videoTestimonialsData = [
     id: 1,
     name: "Santu",
     role: "Content Creator",
-    instagram: "@santu_inuk",
-    videoUrl: "https://www.youtube.com/embed/HYSrpkh-H4M",
-    thumbnail: "https://img.youtube.com/vi/HYSrpkh-H4M/maxresdefault.jpg",
+    instagram: "@santu.2.0_",
+    videoUrl: "https://www.youtube.com/embed/NI3-U8Dj4cc",
+    thumbnail: "https://img.youtube.com/vi/NI3-U8Dj4cc/maxresdefault.jpg",
     quote: "KV Media Works has been an incredible partner in bringing my content to life with premium quality and consistency.",
   },
 ];
