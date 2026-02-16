@@ -20,10 +20,10 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <img src="/web.png" alt="KV Media Works" className="h-10 w-auto" />
-              <span className="text-white font-medium text-subheading">
+              <img src="/Kv.png" alt="KV Media Works" className="h-10 w-auto" />
+              {/* <span className="text-white font-medium text-subheading">
                 KV Media Works
-              </span>
+              </span> */}
             </Link>
             <p className="text-body text-white/40 leading-relaxed mb-8">
               Premium video production and editing studio delivering cinematic quality content for brands and creators.

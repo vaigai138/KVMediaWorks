@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress, useSmoothParallax, useHorizontalScroll } from '../hooks/useScrollParallax';
 import { useCountUp } from '../hooks/useCountUp';
-import { About_Data, getWhatsAppLink, shortFormVideosData, videoTestimonialsData } from '../utils/data';
+import { About_Data, getWhatsAppLink, homePortfolioData, videoTestimonialsData } from '../utils/data';
 import { servicesData } from '../utils/servicesData';
 import { blogsData } from '../utils/blogsData';
 
@@ -15,8 +15,8 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Show short form content in home portfolio
-  const homePortfolioWorks = shortFormVideosData.slice(0, 10);
+  // Curated home portfolio — Santu, InkCharts, Bolt Digitech
+  const homePortfolioWorks = homePortfolioData;
 
   const previewServices = servicesData.slice(0, 6);
   const previewBlogs = blogsData.slice(0, 3);
@@ -373,7 +373,7 @@ const BlogSection = ({ blogs }) => (
 );
 
 /* ═══════════ BRAND STRIP ═══════════ */
-const brandNames = ['Beardo', 'Focas', 'Santu UK', 'InkCharts', 'Spyka', 'Dr. Balaji', 'Botfolio', 'CookIT'];
+const brandNames = ['Beardo', 'Santu', 'Melby', 'Bolt Digitech', 'Botfolio', 'CookIT', 'InkCharts'];
 const BrandStrip = memo(() => (
   <section className="relative py-16 lg:py-20 overflow-hidden" style={{ backgroundColor: '#020e2b' }}>
     <div className="container-luxury relative z-10">
@@ -385,7 +385,7 @@ const BrandStrip = memo(() => (
   </section>
 ));
 
-/* ═══════════ 09 — VIDEO TESTIMONIAL (Instagram-style) ═══════════ */
+/* ═══════════ 09 — VIDEO TESTIMONIAL (Left-Right Layout) ═══════════ */
 const VideoTestimonialSection = () => {
   const testimonial = videoTestimonialsData[0];
   const [isPlaying, setIsPlaying] = useState(false);
@@ -397,40 +397,56 @@ const VideoTestimonialSection = () => {
       <div className="container-luxury relative z-10">
         <ScrollReveal><div className="flex items-center gap-6 mb-20"><span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">09</span><div className="w-8 h-px bg-primary/20" /><p className="overline-text">Client Story</p></div></ScrollReveal>
         <ScrollReveal delay={100}>
-          <div className="max-w-lg mx-auto">
-            <div className="border border-white/[0.08] rounded-sm overflow-hidden" style={{ backgroundColor: '#0a1e3d' }}>
-              {/* Instagram-style header */}
-              <div className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.06]">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/60 to-primary/20 flex items-center justify-center">
-                  <span className="text-[0.6rem] font-medium text-white">{testimonial.name[0]}</span>
-                </div>
-                <div className="flex-1">
-                  <p className="text-[0.75rem] text-white font-medium leading-none">{testimonial.name}</p>
-                  <p className="text-[0.6rem] text-white/40 mt-0.5">{testimonial.instagram}</p>
-                </div>
-                <svg className="w-4 h-4 text-white/30" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                </svg>
-              </div>
-              {/* 9:16 Video */}
-              <div className="relative aspect-[9/16]">
-                {!isPlaying ? (
-                  <button onClick={() => setIsPlaying(true)} className="w-full h-full relative group">
-                    <img src={testimonial.thumbnail} alt={testimonial.name} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-                      <div className="w-16 h-16 rounded-full border-2 border-white/30 bg-black/20 backdrop-blur-sm flex items-center justify-center group-hover:border-white/50 transition-colors">
-                        <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                      </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left: Instagram Video Card (compact) */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="w-full max-w-[280px] sm:max-w-[300px]">
+                <div className="border border-white/[0.08] rounded-sm overflow-hidden" style={{ backgroundColor: '#0a1e3d' }}>
+                  <div className="flex items-center gap-3 px-3 py-2.5 border-b border-white/[0.06]">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary/60 to-primary/20 flex items-center justify-center">
+                      <span className="text-[0.55rem] font-medium text-white">{testimonial.name[0]}</span>
                     </div>
-                  </button>
-                ) : (
-                  <iframe src={`${testimonial.videoUrl}?autoplay=1`} className="w-full h-full" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={`${testimonial.name} testimonial`} />
-                )}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[0.7rem] text-white font-medium leading-none truncate">{testimonial.name}</p>
+                      <p className="text-[0.55rem] text-white/40 mt-0.5 truncate">{testimonial.instagram}</p>
+                    </div>
+                    <svg className="w-3.5 h-3.5 text-white/30 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
+                  </div>
+                  <div className="relative aspect-[9/14]">
+                    {!isPlaying ? (
+                      <button onClick={() => setIsPlaying(true)} className="w-full h-full relative group">
+                        <img src={testimonial.thumbnail} alt={testimonial.name} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                          <div className="w-14 h-14 rounded-full border-2 border-white/30 bg-black/20 backdrop-blur-sm flex items-center justify-center group-hover:border-white/50 transition-colors">
+                            <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                          </div>
+                        </div>
+                      </button>
+                    ) : (
+                      <iframe src={`${testimonial.videoUrl}?autoplay=1`} className="w-full h-full" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={`${testimonial.name} testimonial`} />
+                    )}
+                  </div>
+                  <div className="px-3 py-2.5">
+                    <p className="text-[0.7rem] text-white/60 leading-relaxed line-clamp-2"><span className="text-white font-medium">{testimonial.name}</span>{' '}{testimonial.quote}</p>
+                    <p className="text-[0.55rem] text-white/25 mt-1.5 uppercase tracking-wider">{testimonial.role}</p>
+                  </div>
+                </div>
               </div>
-              {/* Footer */}
-              <div className="px-4 py-3">
-                <p className="text-[0.75rem] text-white/60 leading-relaxed"><span className="text-white font-medium">{testimonial.name}</span>{' '}{testimonial.quote}</p>
-                <p className="text-[0.6rem] text-white/25 mt-2 uppercase tracking-wider">{testimonial.role}</p>
+            </div>
+            {/* Right: What they're saying */}
+            <div className="text-center lg:text-left">
+              <svg className="w-10 h-10 text-primary/20 mb-6 mx-auto lg:mx-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+              </svg>
+              <p className="text-[1.1rem] md:text-[1.3rem] text-white/60 leading-relaxed mb-8 font-light italic">
+                "{testimonial.quote}"
+              </p>
+              <div>
+                <p className="text-white font-medium text-body-lg">{testimonial.name}</p>
+                <p className="text-white/30 text-caption mt-1">{testimonial.role}</p>
+                <p className="text-primary/40 text-caption mt-1">{testimonial.instagram}</p>
               </div>
             </div>
           </div>

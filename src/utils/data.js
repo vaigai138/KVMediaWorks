@@ -49,21 +49,21 @@ export const Whatwedo_Data = [
 // ═══════════════════════════════════════
 
 export const shortFormVideosData = [
-    { client: 'Focas', title: 'Short Video 1', link: 'https://www.youtube.com/embed/-_qW-CYaJSs', thumbnail: 'https://img.youtube.com/vi/-_qW-CYaJSs/maxresdefault.jpg' },
-    { client: 'Focas', title: 'Short Video 2', link: 'https://www.youtube.com/embed/HhFQOmu5UBM', thumbnail: 'https://img.youtube.com/vi/HhFQOmu5UBM/maxresdefault.jpg' },
-    { client: 'Santu', title: 'Short Video 3', link: 'https://www.youtube.com/embed/HYSrpkh-H4M', thumbnail: 'https://img.youtube.com/vi/HYSrpkh-H4M/maxresdefault.jpg' },
-    { client: 'Scratch Learn', title: 'Short Video 1', link: 'https://www.youtube.com/embed/lXWFcj6dhOs', thumbnail: 'https://img.youtube.com/vi/lXWFcj6dhOs/maxresdefault.jpg' },
-    { client: 'Santu In UK', title: 'Short Video 2', link: 'https://www.youtube.com/embed/iJyzJXLGp9E', thumbnail: 'https://img.youtube.com/vi/iJyzJXLGp9E/maxresdefault.jpg' },
-    { client: 'Santu In UK', title: 'Short Video 3', link: 'https://www.youtube.com/embed/SFpCJlJHPG8', thumbnail: 'https://img.youtube.com/vi/SFpCJlJHPG8/maxresdefault.jpg' },
-    { client: 'Santu In UK', title: 'Short Video 4', link: 'https://www.youtube.com/embed/sRKKLyJdM1A', thumbnail: 'https://img.youtube.com/vi/sRKKLyJdM1A/maxresdefault.jpg' },
-    { client: 'Spyka', title: 'Short Video 5', link: 'https://www.youtube.com/embed/KN5E0ZKDaUU', thumbnail: 'https://img.youtube.com/vi/KN5E0ZKDaUU/maxresdefault.jpg' },
-    { client: 'InkCharts', title: 'Short Video 6', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
-    { client: 'InkCharts', title: 'Short Video 7', link: 'https://www.youtube.com/embed/vnhVPFN9KvY', thumbnail: 'https://img.youtube.com/vi/vnhVPFN9KvY/maxresdefault.jpg' },
-    { client: 'InkCharts', title: 'Short Video 8', link: 'https://www.youtube.com/embed/GkCpfK1i06E', thumbnail: 'https://img.youtube.com/vi/GkCpfK1i06E/maxresdefault.jpg' },
-    { client: 'Game Changer', title: 'Short Video 9', link: 'https://www.youtube.com/embed/65-eTqZ5ni4', thumbnail: 'https://img.youtube.com/vi/65-eTqZ5ni4/maxresdefault.jpg' },
-    { client: 'Dr.Balaji', title: 'Short Video 10', link: 'https://www.youtube.com/embed/vkmUe7dujs8', thumbnail: 'https://img.youtube.com/vi/vkmUe7dujs8/maxresdefault.jpg' },
-    { client: 'Spyka', title: 'Short Video 11', link: 'https://www.youtube.com/embed/L0l6SIIvRW0', thumbnail: 'https://img.youtube.com/vi/L0l6SIIvRW0/maxresdefault.jpg' },
-    { client: 'Scratch Learn', title: 'Short Video 12', link: 'https://www.youtube.com/embed/eyej3zK_Fz0', thumbnail: 'https://img.youtube.com/vi/eyej3zK_Fz0/maxresdefault.jpg' },
+    // InkCharts
+    { client: 'InkCharts', title: 'Short Video 1', link: 'https://www.youtube.com/embed/vnhVPFN9KvY', thumbnail: 'https://img.youtube.com/vi/vnhVPFN9KvY/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video 2', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video 3', link: 'https://www.youtube.com/embed/8qJqVjjv-7Q', thumbnail: 'https://img.youtube.com/vi/8qJqVjjv-7Q/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video 4', link: 'https://www.youtube.com/embed/q9xzV-GO5oE', thumbnail: 'https://img.youtube.com/vi/q9xzV-GO5oE/maxresdefault.jpg' },
+    // Bolt Digitech
+    { client: 'Bolt Digitech', title: 'Short Video 1', link: 'https://www.youtube.com/embed/apGvOvZFi6c', thumbnail: 'https://img.youtube.com/vi/apGvOvZFi6c/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short Video 2', link: 'https://www.youtube.com/embed/5heTIg_ckjg', thumbnail: 'https://img.youtube.com/vi/5heTIg_ckjg/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short Video 3', link: 'https://www.youtube.com/embed/6KeXpb6mxQM', thumbnail: 'https://img.youtube.com/vi/6KeXpb6mxQM/maxresdefault.jpg' },
+    // Santu
+    { client: 'Santu', title: 'Short Video 1', link: 'https://www.youtube.com/embed/-AjTIYV-tUk', thumbnail: 'https://img.youtube.com/vi/-AjTIYV-tUk/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short Video 2', link: 'https://www.youtube.com/embed/aykX6yfdt-A', thumbnail: 'https://img.youtube.com/vi/aykX6yfdt-A/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short Video 3', link: 'https://www.youtube.com/embed/CTj9d2-8UR8', thumbnail: 'https://img.youtube.com/vi/CTj9d2-8UR8/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short Video 4', link: 'https://www.youtube.com/embed/JqGs08SYpP0', thumbnail: 'https://img.youtube.com/vi/JqGs08SYpP0/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short Video 5', link: 'https://www.youtube.com/embed/rX8DixOPgdw', thumbnail: 'https://img.youtube.com/vi/rX8DixOPgdw/maxresdefault.jpg' },
 ];
 
 export const longFormVideosData = [
@@ -83,14 +83,14 @@ export const motionDesignVideos = [
 ];
 
 export const shortFormContentVideos = [
-    { client: 'Focas', title: 'Short 01', link: 'https://www.youtube.com/embed/-_qW-CYaJSs', thumbnail: 'https://img.youtube.com/vi/-_qW-CYaJSs/maxresdefault.jpg' },
-    { client: 'Focas', title: 'Short 02', link: 'https://www.youtube.com/embed/HhFQOmu5UBM', thumbnail: 'https://img.youtube.com/vi/HhFQOmu5UBM/maxresdefault.jpg' },
-    { client: 'Scratch Learn', title: 'Short 03', link: 'https://www.youtube.com/embed/eyej3zK_Fz0', thumbnail: 'https://img.youtube.com/vi/eyej3zK_Fz0/maxresdefault.jpg' },
-    { client: 'Scratch Learn', title: 'Short 04', link: 'https://www.youtube.com/embed/lXWFcj6dhOs', thumbnail: 'https://img.youtube.com/vi/lXWFcj6dhOs/maxresdefault.jpg' },
-    { client: 'Santu In UK', title: 'Short 05', link: 'https://www.youtube.com/embed/iJyzJXLGp9E', thumbnail: 'https://img.youtube.com/vi/iJyzJXLGp9E/maxresdefault.jpg' },
-    { client: 'Santu In UK', title: 'Short 06', link: 'https://www.youtube.com/embed/SFpCJlJHPG8', thumbnail: 'https://img.youtube.com/vi/SFpCJlJHPG8/maxresdefault.jpg' },
-    { client: 'InkCharts', title: 'Short 07', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
-    { client: 'Spyka', title: 'Short 08', link: 'https://www.youtube.com/embed/KN5E0ZKDaUU', thumbnail: 'https://img.youtube.com/vi/KN5E0ZKDaUU/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short 01', link: 'https://www.youtube.com/embed/vnhVPFN9KvY', thumbnail: 'https://img.youtube.com/vi/vnhVPFN9KvY/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short 02', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short 03', link: 'https://www.youtube.com/embed/apGvOvZFi6c', thumbnail: 'https://img.youtube.com/vi/apGvOvZFi6c/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short 04', link: 'https://www.youtube.com/embed/5heTIg_ckjg', thumbnail: 'https://img.youtube.com/vi/5heTIg_ckjg/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short 05', link: 'https://www.youtube.com/embed/-AjTIYV-tUk', thumbnail: 'https://img.youtube.com/vi/-AjTIYV-tUk/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short 06', link: 'https://www.youtube.com/embed/aykX6yfdt-A', thumbnail: 'https://img.youtube.com/vi/aykX6yfdt-A/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short 07', link: 'https://www.youtube.com/embed/8qJqVjjv-7Q', thumbnail: 'https://img.youtube.com/vi/8qJqVjjv-7Q/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short 08', link: 'https://www.youtube.com/embed/CTj9d2-8UR8', thumbnail: 'https://img.youtube.com/vi/CTj9d2-8UR8/maxresdefault.jpg' },
 ];
 
 export const corporateProductVideos = [
@@ -112,6 +112,21 @@ export const youtubeVideos = [
     { client: 'Beardo', title: 'YouTube 02', link: 'https://www.youtube.com/embed/_Cao_r2swWQ', thumbnail: 'https://img.youtube.com/vi/_Cao_r2swWQ/maxresdefault.jpg' },
     { client: 'Santu', title: 'YouTube 03', link: 'https://www.youtube.com/embed/Ijhy7m2sDeA', thumbnail: 'https://img.youtube.com/vi/Ijhy7m2sDeA/maxresdefault.jpg' },
     { client: 'Santu', title: 'YouTube 04', link: 'https://www.youtube.com/embed/gYVne66AaxE', thumbnail: 'https://img.youtube.com/vi/gYVne66AaxE/maxresdefault.jpg' },
+];
+
+// ═══════════════════════════════════════
+// HOME PAGE CURATED PORTFOLIO (Santu, InkCharts, Bolt Digitech)
+// ═══════════════════════════════════════
+
+export const homePortfolioData = [
+    { client: 'Santu', title: 'Short Video', link: 'https://www.youtube.com/embed/-AjTIYV-tUk', thumbnail: 'https://img.youtube.com/vi/-AjTIYV-tUk/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video', link: 'https://www.youtube.com/embed/vnhVPFN9KvY', thumbnail: 'https://img.youtube.com/vi/vnhVPFN9KvY/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short Video', link: 'https://www.youtube.com/embed/apGvOvZFi6c', thumbnail: 'https://img.youtube.com/vi/apGvOvZFi6c/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short Video', link: 'https://www.youtube.com/embed/aykX6yfdt-A', thumbnail: 'https://img.youtube.com/vi/aykX6yfdt-A/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video', link: 'https://www.youtube.com/embed/GlXPyudoCFk', thumbnail: 'https://img.youtube.com/vi/GlXPyudoCFk/maxresdefault.jpg' },
+    { client: 'Bolt Digitech', title: 'Short Video', link: 'https://www.youtube.com/embed/5heTIg_ckjg', thumbnail: 'https://img.youtube.com/vi/5heTIg_ckjg/maxresdefault.jpg' },
+    { client: 'Santu', title: 'Short Video', link: 'https://www.youtube.com/embed/CTj9d2-8UR8', thumbnail: 'https://img.youtube.com/vi/CTj9d2-8UR8/maxresdefault.jpg' },
+    { client: 'InkCharts', title: 'Short Video', link: 'https://www.youtube.com/embed/8qJqVjjv-7Q', thumbnail: 'https://img.youtube.com/vi/8qJqVjjv-7Q/maxresdefault.jpg' },
 ];
 
 // ═══════════════════════════════════════
