@@ -3,26 +3,61 @@ import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress, useSmoothParallax, useHorizontalScroll } from '../hooks/useScrollParallax';
 import { useCountUp } from '../hooks/useCountUp';
-import { About_Data, getWhatsAppLink, homePortfolioData, videoTestimonialsData } from '../utils/data';
+import { getWhatsAppLink, homePortfolioData, videoTestimonialsData } from '../utils/data';
 import { servicesData } from '../utils/servicesData';
-import { blogsData } from '../utils/blogsData';
+import { fetchPublishedBlogs } from '../utils/blogApi';
+import SEO, { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION } from '../components/SEO';
+
+const homeJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${SITE_URL}/blog?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: SITE_NAME,
+    image: `${SITE_URL}/hero-logo.png`,
+    url: SITE_URL,
+    description: DEFAULT_DESCRIPTION,
+    email: 'hello@kvmediaworks.in',
+    telephone: '+91-7604895101',
+    priceRange: '$$',
+    sameAs: [
+      'https://www.instagram.com/kv_mediaworks/',
+      'https://www.linkedin.com/company/kvmediaworks',
+    ],
+  },
+];
 
 const HomePage = () => {
   const [overlayDone, setOverlayDone] = useState(false);
+  const [previewBlogs, setPreviewBlogs] = useState([]);
 
   useEffect(() => {
     const timer = setTimeout(() => setOverlayDone(true), 2600);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    fetchPublishedBlogs().then((list) => setPreviewBlogs(list.slice(0, 3)));
+  }, []);
+
   // Curated home portfolio — Santu, InkCharts, Bolt Digitech
   const homePortfolioWorks = homePortfolioData;
 
   const previewServices = servicesData.slice(0, 6);
-  const previewBlogs = blogsData.slice(0, 3);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#020e2b' }}>
+      <SEO path="/" jsonLd={homeJsonLd} />
       {!overlayDone && <div className="cinematic-overlay" />}
       <ScrollProgressBar />
       <HeroSection />
@@ -348,17 +383,23 @@ const ShowreelSection = () => {
 };
 
 /* ═══════════ 08 — BLOG ═══════════ */
-const BlogSection = ({ blogs }) => (
+const formatBlogDate = (iso) => {
+  try { return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }); }
+  catch { return ''; }
+};
+const BlogSection = ({ blogs }) => {
+  if (!blogs || blogs.length === 0) return null;
+  return (
   <section className="section-padding relative overflow-hidden" style={{ backgroundColor: '#031539' }}>
     <div className="section-edge-light" />
     <div className="container-luxury relative z-10">
       <ScrollReveal><div className="flex items-center gap-6 mb-20"><span className="text-[0.65rem] font-mono text-primary/40 tracking-widest">08</span><div className="w-8 h-px bg-primary/20" /><p className="overline-text">Journal</p></div></ScrollReveal>
       <div className="space-y-0">
         {blogs.map((blog, index) => (
-          <ScrollReveal key={blog.id} delay={index * 100} duration={1.2}>
+          <ScrollReveal key={blog.slug} delay={index * 100} duration={1.2}>
             <Link to={`/blog/${blog.slug}`} className="block border-t border-white/[0.04] py-8 md:py-12 group hover:bg-white/[0.01] transition-colors duration-300">
               <article><div className="grid grid-cols-12 gap-4 md:gap-8">
-                <div className="col-span-12 md:col-span-3"><span className="text-overline text-primary/50 block mb-1">{blog.category}</span><span className="text-[0.65rem] font-mono text-white/30">{blog.date}</span></div>
+                <div className="col-span-12 md:col-span-3"><span className="text-overline text-primary/50 block mb-1">{blog.category}</span><span className="text-[0.65rem] font-mono text-white/30">{formatBlogDate(blog.publishedAt)}</span></div>
                 <div className="col-span-12 md:col-span-5"><h3 className="text-subheading md:text-heading text-white leading-snug group-hover:text-primary transition-colors duration-300">{blog.title}</h3></div>
                 <div className="col-span-12 md:col-span-4"><p className="text-body text-white/45 leading-relaxed line-clamp-3">{blog.excerpt}</p></div>
               </div></article>
@@ -370,7 +411,8 @@ const BlogSection = ({ blogs }) => (
       <ScrollReveal delay={200}><div className="mt-14"><Link to="/blog" className="text-caption text-primary/60 tracking-wide inline-flex items-center gap-3 hover:text-primary transition-colors"><span className="w-8 h-px bg-primary/30" />All articles</Link></div></ScrollReveal>
     </div>
   </section>
-);
+  );
+};
 
 /* ═══════════ BRAND STRIP ═══════════ */
 const brandNames = ['Beardo', 'Santu', 'Melby', 'Bolt Digitech', 'Botfolio', 'CookIT', 'InkCharts'];

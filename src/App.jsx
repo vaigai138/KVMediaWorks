@@ -1,9 +1,10 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import PageTransition from './components/PageTransition';
 import CustomCursor from './components/CustomCursor';
+import AdminRoute from './components/admin/AdminRoute';
 import HomePage from './pages/HomePage';
 
 // Lazy-load secondary pages — only HomePage loads eagerly
@@ -14,6 +15,13 @@ const BlogsPage = lazy(() => import('./pages/BlogsPage'));
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'));
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+
+// Admin panel (lazy — never loaded for normal visitors)
+const AdminLogin = lazy(() => import('./pages/admin/Login'));
+const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
+const AdminBlogEditor = lazy(() => import('./pages/admin/BlogEditor'));
+const AdminPageMeta = lazy(() => import('./pages/admin/PageMeta'));
+const AdminSettings = lazy(() => import('./pages/admin/Settings'));
 
 /* Loading fallback — spinner with brand styling */
 const PageLoader = () => (
@@ -37,34 +45,59 @@ const NotFound = () => (
   </div>
 );
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <CustomCursor />
-      <Navbar />
-      <main>
-        <PageTransition>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/portfolio" element={<PortfolioPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/blog" element={<BlogsPage />} />
-              <Route path="/blog/:slug" element={<BlogDetailPage />} />
-              <Route path="/testimonials" element={<TestimonialsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              {/* Legacy route */}
-              <Route path="/works" element={<PortfolioPage />} />
-              {/* 404 fallback */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </PageTransition>
-      </main>
-      <Footer />
-    </BrowserRouter>
-  );
+/* Public site — full chrome (navbar, footer, cursor, transitions) */
+const PublicSite = () => (
+  <>
+    <CustomCursor />
+    <Navbar />
+    <main>
+      <PageTransition>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/blog" element={<BlogsPage />} />
+            <Route path="/blog/:slug" element={<BlogDetailPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            {/* Legacy route */}
+            <Route path="/works" element={<PortfolioPage />} />
+            {/* 404 fallback */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </PageTransition>
+    </main>
+    <Footer />
+  </>
+);
+
+/* Admin panel — no public chrome */
+const AdminApp = () => (
+  <Suspense fallback={<PageLoader />}>
+    <Routes>
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+      <Route path="/admin/new" element={<AdminRoute><AdminBlogEditor /></AdminRoute>} />
+      <Route path="/admin/edit/:slug" element={<AdminRoute><AdminBlogEditor /></AdminRoute>} />
+      <Route path="/admin/seo" element={<AdminRoute><AdminPageMeta /></AdminRoute>} />
+      <Route path="/admin/settings" element={<AdminRoute><AdminSettings /></AdminRoute>} />
+    </Routes>
+  </Suspense>
+);
+
+const AppContent = () => {
+  const { pathname } = useLocation();
+  const isAdmin = pathname.startsWith('/admin');
+  return isAdmin ? <AdminApp /> : <PublicSite />;
 };
+
+const App = () => (
+  <BrowserRouter>
+    <AppContent />
+  </BrowserRouter>
+);
 
 export default App;

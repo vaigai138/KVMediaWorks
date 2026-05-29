@@ -4,6 +4,19 @@ import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress } from '../hooks/useScrollParallax';
 import { servicesData } from '../utils/servicesData';
 import { getWhatsAppLink } from '../utils/data';
+import SEO, { SITE_URL, SITE_NAME } from '../components/SEO';
+
+const servicesJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  name: 'Video Editing & Production Services',
+  url: `${SITE_URL}/services`,
+  provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+  itemListElement: servicesData.map((s) => ({
+    '@type': 'Offer',
+    itemOffered: { '@type': 'Service', name: s.title, description: s.description },
+  })),
+};
 
 /* ═══════════════════════════════════════════════════════════
    SERVICES PAGE — PRODUCTION-LEVEL LUXURY
@@ -165,6 +178,13 @@ const processSteps = [
 const ServicesPage = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#020e2b' }}>
+      <SEO
+        title="Video Editing & Production Services"
+        path="/services"
+        description="End-to-end video production services — short & long-form editing, corporate videos, ads, motion graphics, podcasts, music videos, and more. 19 specialized services to elevate your brand."
+        keywords="video editing services, short form editing, long form video editing, corporate video editing, motion graphics, podcast editing, social media ads, YouTube editing, music video editing"
+        jsonLd={servicesJsonLd}
+      />
       <ScrollProgressBar />
 
       {/* ═══════════ 01 — HERO ═══════════ */}

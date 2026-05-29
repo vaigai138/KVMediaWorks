@@ -2,10 +2,17 @@ import { useState } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
 import { testimonialsData } from '../utils/testimonialsData';
 import { videoTestimonialsData } from '../utils/data';
+import SEO from '../components/SEO';
 
 const TestimonialsPage = () => {
   return (
     <div className="bg-background min-h-screen">
+      <SEO
+        title="Testimonials"
+        path="/testimonials"
+        description="Hear what brands and creators say about working with KV Media Works. Real client stories on quality, consistency, and results from our video editing partnership."
+        keywords="KV Media Works reviews, video editing testimonials, client reviews, video editor feedback"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial" />

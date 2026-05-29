@@ -1,0 +1,86 @@
+[
+  {
+    "title": "The Art of Color Grading: How It Transforms Your Video",
+    "slug": "art-of-color-grading",
+    "excerpt": "Color grading is more than just adjusting brightness and contrast. Discover how professional colorists use tools like DaVinci Resolve to create mood, atmosphere, and visual storytelling that elevates raw footage into cinema.",
+    "coverImage": "",
+    "author": "KV Media Works",
+    "category": "Post Production",
+    "publishedAt": "2025-01-14T18:30:00.000Z",
+    "updatedAt": "2025-01-14T18:30:00.000Z",
+    "status": "published",
+    "tags": [
+      "Post Production"
+    ]
+  },
+  {
+    "title": "Why Short-Form Content Is the Future of Brand Marketing",
+    "slug": "short-form-content-future",
+    "excerpt": "With attention spans shrinking, Instagram Reels and YouTube Shorts have become the most powerful tools for brand awareness. Learn how to create content that hooks viewers in the first second.",
+    "coverImage": "",
+    "author": "KV Media Works",
+    "category": "Strategy",
+    "publishedAt": "2025-01-27T18:30:00.000Z",
+    "updatedAt": "2025-01-27T18:30:00.000Z",
+    "status": "published",
+    "tags": [
+      "Strategy"
+    ]
+  },
+  {
+    "title": "Behind the Edit: Our Process from Raw Footage to Final Cut",
+    "slug": "behind-the-edit",
+    "excerpt": "Every great video goes through a meticulous editing process. We break down our workflow — from ingesting footage and organizing timelines to sound design and final delivery.",
+    "coverImage": "",
+    "author": "KV Media Works",
+    "category": "Behind the Scenes",
+    "publishedAt": "2025-02-09T18:30:00.000Z",
+    "updatedAt": "2025-02-09T18:30:00.000Z",
+    "status": "published",
+    "tags": [
+      "Behind the Scenes"
+    ]
+  },
+  {
+    "title": "Corporate Video Production: What Every Business Should Know",
+    "slug": "corporate-video-production",
+    "excerpt": "Corporate videos are no longer optional — they're essential. From investor presentations to recruitment films, learn what makes a corporate video truly effective.",
+    "coverImage": "",
+    "author": "KV Media Works",
+    "category": "Corporate",
+    "publishedAt": "2025-02-24T18:30:00.000Z",
+    "updatedAt": "2025-02-24T18:30:00.000Z",
+    "status": "published",
+    "tags": [
+      "Corporate"
+    ]
+  },
+  {
+    "title": "Motion Graphics: Adding Life to Your Brand's Visual Identity",
+    "slug": "motion-graphics-brand-identity",
+    "excerpt": "Motion graphics bridge the gap between static design and video. Explore how animated logos, kinetic typography, and info-graphics can strengthen your brand communication.",
+    "coverImage": "",
+    "author": "KV Media Works",
+    "category": "Motion Design",
+    "publishedAt": "2025-03-07T18:30:00.000Z",
+    "updatedAt": "2025-03-07T18:30:00.000Z",
+    "status": "published",
+    "tags": [
+      "Motion Design"
+    ]
+  },
+  {
+    "title": "Choosing the Right Music for Your Video: A Complete Guide",
+    "slug": "choosing-right-music",
+    "excerpt": "Music sets the emotional foundation of any video. Learn how to select tracks that complement your narrative without overpowering it, and understand licensing basics.",
+    "coverImage": "",
+    "author": "KV Media Works",
+    "category": "Sound Design",
+    "publishedAt": "2025-03-19T18:30:00.000Z",
+    "updatedAt": "2025-03-19T18:30:00.000Z",
+    "status": "published",
+    "tags": [
+      "Sound Design"
+    ]
+  }
+]

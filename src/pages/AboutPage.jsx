@@ -4,6 +4,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress } from '../hooks/useScrollParallax';
 import { useCountUp } from '../hooks/useCountUp';
 import { About_Data, getWhatsAppLink } from '../utils/data';
+import SEO from '../components/SEO';
 
 /* ═══════════════════════════════════════════════════════════
    ABOUT PAGE — CINEMATIC DESIGN PATTERNS
@@ -96,6 +97,12 @@ const StatItem = ({ number, suffix, label }) => {
 const AboutPage = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#020e2b' }}>
+      <SEO
+        title="About Us"
+        path="/about"
+        description="KV Media Works is a creative video editing powerhouse blending precision with creativity. Founded in 2024, we've delivered 700+ videos for 65+ clients — from social-first short form to cinematic long-form productions."
+        keywords="about KV Media Works, video editing agency, creative video studio, video post production team, cinematic editing"
+      />
       <ScrollProgressBar />
 
       {/* ═══════════ 01 — HERO ═══════════ */}

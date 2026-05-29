@@ -1,0 +1,72 @@
+{
+  "/": {
+    "label": "Home",
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonical": ""
+  },
+  "/about": {
+    "label": "About",
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonical": ""
+  },
+  "/services": {
+    "label": "Services",
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonical": ""
+  },
+  "/portfolio": {
+    "label": "Portfolio",
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonical": ""
+  },
+  "/testimonials": {
+    "label": "Testimonials",
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonical": ""
+  },
+  "/blog": {
+    "label": "Blog",
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonical": ""
+  },
+  "/contact": {
+    "label": "Contact",
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonical": ""
+  }
+}

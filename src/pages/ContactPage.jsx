@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
 import { About_Data } from '../utils/data';
 import { servicesData } from '../utils/servicesData';
+import SEO from '../components/SEO';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -35,6 +36,12 @@ ${formData.message}`;
 
   return (
     <div className="bg-background min-h-screen">
+      <SEO
+        title="Contact"
+        path="/contact"
+        description="Ready to bring your vision to life? Get in touch with KV Media Works to discuss your video editing project. We typically respond within 2-4 hours via WhatsApp or email."
+        keywords="contact KV Media Works, hire video editor, video editing quote, start a video project, video production inquiry"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial" />

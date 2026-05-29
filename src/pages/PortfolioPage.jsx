@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import { useScrollRevealProgress } from '../hooks/useScrollParallax';
 import { About_Data, getWhatsAppLink, shortFormVideosData, longFormVideosData, motionDesignVideos, corporateProductVideos, doctorVideos, youtubeVideos } from '../utils/data';
+import SEO from '../components/SEO';
 
 /* ═══════════════════════════════════════════════════════════
    PORTFOLIO PAGE — PRODUCTION-LEVEL LUXURY
@@ -224,6 +225,12 @@ const PortfolioPage = () => {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#020e2b' }}>
+      <SEO
+        title="Portfolio"
+        path="/portfolio"
+        description="Explore the KV Media Works portfolio — short-form Reels, long-form YouTube videos, motion design, corporate films, and more, crafted for brands and creators worldwide."
+        keywords="video editing portfolio, video editing showreel, Reels portfolio, YouTube editing examples, motion graphics portfolio, corporate video samples"
+      />
       <ScrollProgressBar />
 
       {/* ═══════════ 01 — HERO ═══════════ */}
